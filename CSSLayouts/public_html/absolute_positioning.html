@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Absolute and Relative Positioning</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            p {
+                margin: 0;
+            }
+            body {
+                width: 90%;
+                margin: 0 25px 20px;
+                border: 1px solid black;
+                position: relative;
+            }
+            #sidebar {
+                width: 80px;
+                padding: 1em;
+                border: 1px solid black;
+                position: absolute;
+                right: 30px;
+                top: 50px;
+            }
+            #main {
+                width: 80%;
+                float: left;
+            }
+            .shiftLeft {
+                position: relative;
+                left: 50px;}
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <h1>US News</h1>
+            <ul>
+                <li>Holder: Mixed record on national security issues</li>
+                <li>The Health Effects of Leaving Religion</li>
+                <li>Storms drench parts of Arizona, Nevada</li>
+            </ul>
+            <p class="shiftLeft">Please visit www.msn.com for more newa.</p>
+        </div>
+        <div id="sidebar">
+            <p><a href="nowhere.html">Enter to win a free iPhone 6.</a></p>
+        </div>
+    </body>
+</html>

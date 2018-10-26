@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Date Picker Demo</title>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          //var url = "http://localhost:1209/week6/books.xml";
+          var url = "books.xml";
+          request = new XMLHttpRequest();
+          request.onload = function () {
+              if (request.status == 200) {
+                  displayBook(request.responseXML);
+              }
+          };
+          request.open("GET", url);
+          request.send(null);
+      });
+      function displayBook(books) {
+          var book = books.getElementsByTagName("book");
+          for (i = 0; i < book.length; i++) {
+              $("#books").append(
+				books.getElementsByTagName("title")[i].childNodes[0].nodeValue + "<br>" +
+				books.getElementsByTagName("price")[i].childNodes[0].nodeValue + "<br>" +
+				books.getElementsByTagName("publisher")[i].childNodes[0].nodeValue + "<br><br>");
+          }
+      }
+  </script>
+</head>
+<body>
+    <section id="books">
+    </section>
+</body>
+</html>

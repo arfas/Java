@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <title>images</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+        <style>
+            body {
+    background-image: url("img.jpg");
+}
+            ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #ddd;}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc;}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+#map {
+        height: 400px;
+        width: 100%;
+       }
+        </style>
+        <script>
+            function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+
+            </script>
+           
+        <h1 style="color: blue">Welcome to myDigi world</h1>
+        <ul class="tab">
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'London')">Home</a></li>
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Paris')">About Us</a></li>
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">Contact Us</a></li>
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Orderpage')">Order Page</a></li>
+  <li>
+      <a href="http://localhost:8383/Mohammed_Arfa_Adeeb_16610_CS557(C)_HW3/cart.html"><img src="cart.jpg" alt="HTML5 Icon" style="width:25px;height:15px;"></a>
+  </li>
+</ul>
+
+<div id="London" class="tabcontent">
+  <h3>Home</h3>
+  <p style="color:red;">DigiWorld Explaination</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>About Us</h3>
+  <p style="color:red;">We are a Digital Photo Company  </p> 
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Contact Us</h3>
+  <p style="color:red;">Location is shown on the map</p>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d197.74653703259514!2d-121.96480556510816!3d37.532803371370335!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1477171215028" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+  
+</div>
+        <div id="Orderpage" class="tabcontent">
+ 
+  <a href="http://localhost:8383/Mohammed_Arfa_Adeeb_16610_CS557(C)_HW3/orderpage.html">Order Page</a>
+</div>
+    </body>
+</html>

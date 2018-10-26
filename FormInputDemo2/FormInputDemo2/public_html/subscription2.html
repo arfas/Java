@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Northwestern Polytechnic University</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="mystyle.css" rel="stylesheet" type="text/css" />
+        <script type = "text/javascript">
+            function checkForNumber(fieldValue) {
+                var numberCheck = isNaN(fieldValue);
+                if (numberCheck == true) {
+                    window.alert("You must enter a numeric value!");
+                    return false;
+                }
+                else
+                    return true;
+            }
+            function confirmPassword() {
+                if (document.myForm.password_confirm.value != document.myForm.password.value) {
+                    window.alert("You did not enter the same password!");
+                    document.myForm.password.focus();
+                }
+            }
+            function billAutomatically() {
+                for (var i = 0; i < document.myForm.delivery.length; ++i) {
+                    if (document.myForm.delivery[i].checked == true) {
+                        document.myForm.delivery[i].checked = false;
+                        break;
+                    }
+                }
+            }
+            function billByIssue() {
+                for (var i = 0; i < document.myForm.autoRenew.length; ++i) {
+                    if (document.myForm.autoRenew[i].checked == true) {
+                        document.myForm.autoRenew[i].checked = false;
+                        break;
+                    }
+                }
+            }
+            function sameShippingInfo() {
+                if (document.myForm.elements[5].checked == true) {
+                    document.myForm.name_shipping.value = document.myForm.name_billing.value;
+                    document.myForm.address_shipping.value = document.myForm.address_billing.value;
+                    document.myForm.city_shipping.value = document.myForm.city_billing.value;
+                    document.myForm.state_shipping.value = document.myForm.state_billing.value;
+                    document.myForm.zip_shipping.value = document.myForm.zip_billing.value;
+                } else {
+                    document.myForm.name_shipping.value = "";
+                    document.myForm.address_shipping.value = "";
+                    document.myForm.city_shipping.value = "";
+                    document.myForm.state_shipping.value = "";
+                    document.myForm.zip_shipping.value = "";
+                }
+            }
+            /***
+            function addJournal() {
+                if (document.myForm.elements[31].value == "")
+                    window.alert("You must enter a journal name.");
+                else {
+                    if (document.myForm.journals.options[0] && document.myForm.journals.options[0].value == "none")
+                        document.myForm.journals.options[0] = null;
+                    var journal = new Option();
+                    journal.text = document.myForm.elements[31].value;
+                    journal.value = document.myForm.elements[31].value;
+                    nextItem = document.myForm.journals.length;
+                    document.myForm.journals.options[nextItem] = journal;
+                    document.myForm.elements[31].value = "";
+                }
+            }
+            ***/
+            function addJournal() {
+                if (document.myForm.newJournal.value == "")
+                    window.alert("You must enter a journal name.");
+                else {
+                    if (document.myForm.journals.options[0] && document.myForm.journals.options[0].value == "none")
+                        document.myForm.journals.options[0] = null;
+                    var journal = new Option();
+                    journal.text = document.myForm.newJournal.value;
+                    journal.value = document.myForm.newJournal.value;
+                    nextItem = document.myForm.journals.length;
+                    document.myForm.journals.options[nextItem] = journal;
+                    document.myForm.newJournal.value = "";
+                }
+            }
+            function deleteJournal() {
+                var selectedItem = document.myForm.journals.selectedIndex;
+                if (selectedItem == "−1")
+                    window.alert("You must select a journal name in the list.");
+                else
+                    document.myForm.journals.remove(selectedItem);
+            }
+            function confirmReset() {
+                var resetForm = window.confirm("Are you sure you want to reset the form?");
+                if (resetForm == true)
+                    return true;
+                return false;
+            }
+            function confirmSubmit() {
+                if (document.myForm.name_billing.value == ""
+                        || document.myForm.address_billing.value == ""
+                        || document.myForm.city_billing.value == ""
+                        || document.myForm.state_billing.value == ""
+                        || document.myForm.zip_billing.value == "") {
+                    window.alert("You must enter your billing information.");
+                    return false;
+                }
+                else if (document.myForm.name_shipping.value == ""
+                        || document.myForm.address_shipping.value == ""
+                        || document.myForm.city_shipping.value == ""
+                        || document.myForm.state_shipping.value == ""
+                        || document.myForm.zip_shipping.value == "") {
+                    window.alert("You must enter your shipping information.");
+                    return false;
+                }
+                else if (document.myForm.area.value == ""
+                        || document.myForm.exchange.value == ""
+                        || document.myForm.phone.value == "") {
+                    window.alert("You must enter your telephone number.");
+                    return false;
+                }
+                else if (document.myForm.userName.value == "") {
+                    window.alert("You must enter a user name.");
+                    return false;
+                }
+                else if (document.myForm.password.value == ""
+                        || document.myForm.password_confirm.value == "") {
+                    window.alert("You must enter a password.");
+                    return false;
+                }
+
+                var deliverySelected = false;
+                for (var i = 0; i < 4; ++i) {
+                    if (document.myForm.delivery[i].checked
+                            == true) {
+                        deliverySelected = true;
+                        break;
+                    }
+                }
+                for (var j = 0; j < 2; ++j) {
+                    if (document.myForm.autoRenew[j].checked
+                            == true) {
+                        deliverySelected = true;
+                        break;
+                    }
+                }
+                if (deliverySelected != true) {
+                    window.alert("You must select a delivery rate option.");
+                    return false;
+                }
+                for (var k = 0; k < document.myForm.journals.length; ++k) {
+                    document.myForm.journals.options[k].selected = true;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="c9">
+            <table border="0" cellpadding="0" cellspacing="0" class="c1" width="780">
+                <tr>
+                    <td height="19" colspan="3">
+                        <div class="c10">
+                            <h1>NPU Subscription Form</h1> 
+                            <h2>Customer Information</h2> 
+                            <form action = "FormProcessor.html" method = "get" name="myForm"
+                                  onsubmit = "return confirmSubmit();" 
+                                  onreset = "return confirmReset();"> 
+                                <table border = "0"> 
+                                    <tr>     
+                                        <td valign = "top">          
+                                            <h3>Billing Information</h3>          
+                                            <p>Name<br />               
+                                                <input type = "text" name = "name_billing" size = "56" />
+                                            </p>          
+                                            <p>
+                                                Address<br />
+                                                <input type = "text" name = "address_billing" size = "56" />
+                                            </p>
+                                            <p>
+                                                City, State, Zip<br />
+                                                <input type = "text" name = "city_billing" size = "34" />
+                                                <input type = "text" name = "state_billing" size = "2" maxlength = "2" />
+                                                <input type = "text" name = "zip_billing" size = "10" maxlength = "10" 
+                                                       onblur = "return checkForNumber(this.value);"/>
+                                            </p>
+                                            <p>
+                                                <input type = "checkbox" onclick = "sameShippingInfo();" /> Same shipping information\
+                                            </p>
+                                        </td>
+                                        <td>&nbsp;</td>     
+                                        <td valign = "top">          
+                                            <h3>Shipping Information</h3>          
+                                            <p>
+                                                Name<br />
+                                                <input type = "text" name = "name_shipping" size = "56" />
+                                            </p>          
+                                            <p>
+                                                Address<br />
+                                                <input type = "text" name = "address_shipping" size = "56" />
+                                            </p>          
+                                            <p>
+                                                City, State, Zip<br />
+                                                <input type = "text" name = "city_shipping" size = "34" />
+                                                <input type = "text" name = "state_shipping" size = "2" maxlength = "2" />
+                                                <input type = "text" name = "zip_shipping" size = "10" maxlength = "5" 
+                                                       onblur = "return checkForNumber(this.value);" />
+                                            </p>     
+                                        </td> 
+                                    </tr>
+                                </table> 
+                                <p>Telephone</p> 
+                                <p>     
+                                    (<input type = "text" name = "area" size = "3" maxlength = "3" 
+                                            onblur = "return checkForNumber(this.value);" />)     
+                                    <input type = "text" name = "exchange" size = "3" maxlength = "3" 
+                                           onblur = "return checkForNumber(this.value);" />
+                                    <input type = "text" name = "phone" size = "4" maxlength = "4" 
+                                           onblur = "return checkForNumber(this.value);" />
+                                </p> 
+                                <p>User name<br />
+                                    <input type = "text" name = "userName" size = "50" />
+                                </p>
+                                <p>Password<br />
+                                    <input type = "password" name = "password" size = "50" />
+                                </p>
+                                <p>confirm password<br />
+                                    <input type = "password" name = "password_confirm" size = "50" onblur = "confirmPassword();" />
+                                </p>
+                                <h3>Delivery Rates</h3>
+                                <table border = "0">
+                                    <colgroup align = "left" width = "100" />
+                                    <colgroup span = "4" align = "center" width = "100" /> 
+                                    <tr><th>6 issues</th>
+                                        <th>12 issues</th>
+                                        <th>18 issues</th>
+                                        <th>24 issues</th></tr>
+                                    <tr>
+                                        <td><input type = "radio" name = "delivery" value = "18.50" onclick="billByIssue()" />$18.50</td> 
+                                        <td><input type = "radio" name = "delivery" value = "29.95" onclick="billByIssue()" />$29.95</td> 
+                                        <td><input type = "radio" name = "delivery" value = "35.90" onclick="billByIssue()"/>$35.90</td> 
+                                        <td><input type = "radio" name = "delivery" value = "47.00" onclick="billByIssue()"/>$47.00</td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    <strong>Automatic Renewal</strong>: 
+                                    <input type = "radio" name = "autoRenew" onclick = "billAutomatically();" />
+                                    Monthly ($8.95)
+                                    <input type = "radio" name = "autoRenew" onclick = "billAutomatically();" />
+                                    Yearly ($19.95)
+                                </p>
+                                <p>
+                                    What technologies are you interested in?</p>
+                                <p>
+                                    <input type = "checkbox" name = "technologies" value = "architecture" />Architecture <br /> 
+                                    <input type = "checkbox" name = "technologies" value = "hardware" />Hardware <br /> 
+                                    <input type = "checkbox" name = "technologies" value = "open_source" />Open source <br /> 
+                                    <input type = "checkbox" name = "technologies" value = "data" />Data management <br /> 
+                                    <input type = "checkbox" name = "technologies" value = "windows" />Windows<br /> 
+                                    <input type = "checkbox" name = "technologies" value = "mac" />Macintosh<br /> 
+                                    <input type = "checkbox" name = "technologies" value = "networking" />Networking
+                                </p>
+                                <p>What is your job title?</p>
+                                <p>
+                                    <select name = "jobTitle">
+                                        <option value = "itStaff">IT staff</option>
+                                        <option value = "consultant">Technical consultant</option>
+                                        <option value = "integrator">Systems administrator</option>
+                                        <option value = "manager">Manager</option>
+                                        <option value = "director">Director</option>
+                                        <option value = "vp">Vice President</option>
+                                        <option value = "seniorManagement">CIO, CTO, CSO, CEO, COO, Chairman, President</option>
+                                        <option value = "other">Other</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    Journal 
+                                    <input type = "text" size = "68" name="newJournal" />
+                                </p> 
+                                <p>
+                                    <input type = "button" value = "Add Journal" onclick = "addJournal();" style = "width: 120px" />
+                                    <input type = "button" value = "Delete Journal" onclick = "deleteJournal()" style = "width: 120px" /> 
+                                    <input type = "button" value = "Clear List" onclick = "document.myForm.journals.options.length = 0;" style = "width: 120px" />
+                                </p> 
+                                <p>
+                                    <select name = "journals" multiple = "multiple" size = "10" style = "width: 500px"> 
+                                        <option value = "none">Enter the technologies journals you subscribe to</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <input type = "submit" value = "Subscribe" />&nbsp; 
+                                    <input type = "reset" />
+                                </p> 
+                            </form> 
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="c5" height="19" colspan="3"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

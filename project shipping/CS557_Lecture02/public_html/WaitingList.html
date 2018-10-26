@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Waiting List</title>
+        <script type="text/javascript">
+            function addStudent() {
+                var studentInfo = document.newStudent.studentName.value + ", ";
+                studentInfo += document.newStudent.course.value;
+                document.newStudent.students.value = studentInfo;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Waiting List</h1>
+        <form action="" method="post" name="newStudent">
+            <p>
+                Student
+                <input type="text" name="studentName"
+                       style="width: 240px" />&nbsp;
+                <br />
+                Course
+                <input type="text" name="course"
+                       style="width: 210px" /><br />
+                <input type="button" value="Add Student" onclick="addStudent()" />
+            </p>
+            <p>
+                <textarea name="students"></textarea>
+            </p> 
+        </form>
+    </body>
+</html>

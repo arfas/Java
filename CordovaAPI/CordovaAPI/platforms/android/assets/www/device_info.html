@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Note-taking Application</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="js/libs/jquery-mobile/jquery.mobile.min.css" />
+        <script type="text/javascript" src="js/libs/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery-mobile/jquery.mobile.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script>
+            function showDeviceInfo() {
+                //Get the appInfo DOM element
+                var element = document.getElementById('appInfo');
+                //replace it with specific information about the device
+                //running the application
+                element.innerHTML = 'Cordova (version ' +
+                        device.cordova + ')<br />' + device.platform + ' ' +
+                        device.name + ' (version ' + device.version + ').';
+            }
+        </script>
+    </head>
+    <body>
+        <div data-role="page">
+            <div data-role="header" data-position="fixed">
+                <a href="index.html" rel="prev" data-icon="back">Back</a>
+                <h1>Device Info</h1>
+            </div>
+            <div data-role="content">
+                <p id="appInfo">Waiting for Cordova Initialization to complete</p>
+                <input type="button" value="Show Device Info" onclick="showDeviceInfo();">
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>NPU HTML Course</h1>
+            </div>
+        </div>
+    </body>
+</html>

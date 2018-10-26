@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Physics Quiz</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript">
+            function scoreQuestion1(answer) {
+                if (answer == 'a')
+                    window.alert("Correct Answer");
+                else
+                    window.alert("Incorrect Answer");
+            }
+            function scoreQuestion2(answer) {
+                if (answer == 'c')
+                    window.alert("Correct Answer");
+                else
+                    window.alert("Incorrect Answer");
+            }
+            function scoreQuestion3(answer) {
+                if (answer == 'b')
+                    window.alert("Correct Answer");
+                else
+                    window.alert("Incorrect Answer");
+            }
+            function scoreQuestion4(answer) {
+                if (answer == "c")
+                    window.alert("Incorrect Answer");
+                else
+                    window.alert("Incorrect Answer");
+            }
+            function scoreQuestion5(answer) {
+                if (answer == "d")
+                    window.alert("Incorrect Answer");
+                else
+                    window.alert("Incorrect Answer");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Physics Quiz</h1>
+        <form action="" name="quiz">
+            <p><strong>1. How many natural elements are there?</strong></p><p>
+                <input type="radio" name="question1" value="a"
+                       onclick="scoreQuestion1('a')" />92<br />
+                <!-- correct answer -->
+                <input type="radio" name="question1" value="b"
+                       onclick="scoreQuestion1('b')" />113<br />
+                <input type="radio" name="question1" value="c"
+                       onclick="scoreQuestion1('c')" />103<br />
+                <input type="radio" name="question1" value="d"
+                       onclick="scoreQuestion1('d')" />88</p>
+            <p><strong>2. If one kg of air is compressed from 1 m3 to 0.5 m3, 
+                    which of the following statements is true?</strong></p><p>
+                <input type="radio" name="question2" value="a"
+                       onclick="scoreQuestion2('a')" />
+                       The density is halved.<br />
+                <input type="radio" name="question2" value="b"
+                       onclick="scoreQuestion2('b')" />
+                       The mass is halved.<br />
+                <input type="radio" name="question2" value="c"
+                       onclick="scoreQuestion2('c')" />
+                       The density is doubled.<br /> <!-- correct answer -->
+                <input type="radio" name="question2" value="d"
+                       onclick="scoreQuestion2('d')" />The mass is doubled.</p>
+            <p><strong>4. What is the SI unit of density?</strong></p><p>
+                <input type="radio" name="question4" value="a"
+                       onclick="scoreQuestion4('a')" />cm3/g<br />
+                <input type="radio" name="question4" value="b"
+                       onclick="scoreQuestion4('b')" />m3/kg<br />
+                <input type="radio" name="question4" value="c"
+                       onclick="scoreQuestion4('c')" />kg/m3<br /> <!-- correct answer -->
+                <input type="radio" name="question4" value="d"
+                       onclick="scoreQuestion4('d')" />g/cm3</p>
+            <p><strong>5. Which of these has the highest density?</strong></p><p>
+                <input type="radio" name="question5" value="a"
+                       onclick="scoreQuestion5('a')" />Lead<br />
+                <input type="radio" name="question5" value="b"
+                       onclick="scoreQuestion5('b')" />Water<br />
+                <input type="radio" name="question5" value="c"
+                       onclick="scoreQuestion5('c')" />Mercury<br />
+                <input type="radio" name="question5" value="d"
+                       onclick="scoreQuestion5('d')" />Tungsten</p> <!-- correct answer -->
+        </form>
+    </body>
+</html>

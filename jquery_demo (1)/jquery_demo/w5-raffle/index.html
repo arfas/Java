@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>w5-raffle</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Raffle</h1>
+        </header>
+        <section>
+            <div class="guess"><img src="img/faulty.jpg"/></div>
+            <div class="guess"><img src="img/student.jpg"/></div>
+            <div class="guess"><img src="img/applicant.jpg"/></div>
+            <div class="guess"><img src="img/alumni.jpg"/></div>
+            <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+            <script>
+                    $(document).ready(function() {
+                        $(".guess").click(function() {
+                            // Generate a random price between 100 and 500
+                            var prize = Math.floor((Math.random() * 401) + 100);
+                            var message = "<p><strong>Your prize is " + prize + "</strong></p>";
+                            $(this).append(message);
+                        }
+                    );
+                });
+            </script>
+        </section>
+    </body>
+</html>

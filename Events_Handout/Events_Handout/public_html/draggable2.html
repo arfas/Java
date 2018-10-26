@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dropping Objects on a Target Example</title>
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+            }
+            .red {
+                background-color: red;
+            }
+            .drop-zone {
+                width: 300px;
+                padding: 20px;
+                border: 2px dashed #000;
+            }
+        </style>
+        <script>
+            window.onload = function () {
+                var dropZone = document.getElementById("dropZone");
+                var dropStatus = document.getElementById("dropStatus");
+
+                function dragDropHandler(e) {
+                    e.preventDefault();
+                    if (e.type === "dragover") {
+                        dropStatus.innerHTML = "You're dragging over the drop zone!";
+                    } else {
+                        dropStatus.innerHTML = "You dropped something!";
+                    }
+                }
+                dropZone.addEventListener("dragover", dragDropHandler);
+                dropZone.addEventListener("drop", dragDropHandler);
+            };
+        </script>
+    </head>
+    <body>
+        <div draggable="true" class="box red"></div>
+        <div id="dropZone" class="drop-zone">Drop Zone!</div>
+        <div id="dropStatus"></div>
+    </body>
+</html>

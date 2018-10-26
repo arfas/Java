@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>jQuery Mobile Dialogs</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="jquery.mobile-1.4.2.min.css" />
+        <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="jquery.mobile-1.4.2.min.js"></script>
+    </head>
+    <body>       
+        <div data-role="page" id="first">
+            <div data-role="header">
+                <h1>School of Engineering</h1>
+            </div>
+            <div data-role="content">
+                <a href="#firstPopup" data-role="button" 
+                   data-rel="popup" data-position-to="window">Show Popup</a>
+                <p>
+                    The School of Engineering offers degree programs at bachelor's, master's, 
+                    and doctoral levels. The following are program descriptions for the bachelor's 
+                    and master's degrees. The dean, program chairs, as well as the faculty members of the 
+                    School of Engineering are responsible for the School's academic affairs.
+                </p>
+            </div>
+            <div data-role="popup" id="firstPopup" data-dismissible="false" class="ui-content">
+                <p>All NPU engineering faculty members possess the following qualities: advanced degrees 
+                    earned in engineering and science disciplines, high-tech work experience, and enthusiasm in 
+                    teaching and helping the students. Engineering is not a homogeneous discipline.</p>
+                <a href="" data-rel="back" data-theme="b" data-role="button">Get Rid Of Me</a>
+            </div>
+        </div>
+    </body>
+</html>

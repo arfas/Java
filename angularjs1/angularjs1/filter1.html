@@ -1,0 +1,33 @@
+<!DOCTYPE html > 
+<html ng-app="filterApp">  
+    <head>   
+        <script src="js/angular.min.js"></script>   
+        <script>
+            var filterModule = angular.module("filterApp", []);
+            filterModule.controller("myCtrl", MyCtrl);
+            function MyCtrl($scope) {
+                var student = {
+                    firstname: 'Llly',
+                    lastname: 'Lee',
+                    dateJoined: new Date(2016, 1, 1),
+                    gpa: 3.5367,
+                };
+                $scope.data = student;
+            }
+        </script> 
+    </head> 
+    <body ng-controller='myCtrl'>  
+        <p>    <!-- Unfiltered data -->    
+            <strong>First Name</strong>: {{data.firstname}}<br/>    
+            <strong>Last Name</strong> {{data.lastname}} <br/>
+            <strong>GPA</strong> {{data.gpa}} <br/>
+            <strong>Date Joined:</strong> {{data.dateJoined}}
+        </p> 
+        <p>    <!-- Filtered data -->    
+            <strong>First Name</strong>: {{data.firstname| lowercase}}<br/>    
+            <strong>Last Name</strong> {{data.lastname| lowercase }} <br/>
+            <strong>GPA</strong> {{data.gpa| number:2 }} <br/>
+            <strong>Date Joined:</strong> {{data.dateJoined | date:fullDate}}
+        </p>
+    </body> 
+</html>

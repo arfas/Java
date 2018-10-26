@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <title>NPU Courses</title>
+</head>
+
+<body>  
+    <section>
+        <h1>NPU Courses</h1>
+        <p>The list that follows includes some NPU courses for this semester.</p>
+        <strong>NPU Courses</strong>
+        <p>
+        	C Programming<br>
+        	C++ Programming<br>
+        	Java Programming<br>
+        	C# Programming<br>
+        </p>
+    </section>
+    
+    <footer>
+        <p>You have visited this page  
+        <output>
+		<script type="text/javascript">
+        if (localStorage.hits) {
+        	localStorage.hits = Number(localStorage.hits) + 1;
+        } else {
+        	localStorage.hits = 1;
+        }
+		document.write(localStorage.hits);
+        </script>
+        </output> 
+        </p>
+        <p>In this session, you have visited this page  
+        <output>
+		<script>
+	        if (sessionStorage.hits) {
+	        	sessionStorage.hits = Number(sessionStorage.hits) + 1;
+	        } else {
+	        	sessionStorage.hits = 1;
+	        }
+			document.write(sessionStorage.hits);
+        </script>
+        </output> 
+        </p>
+    </footer>
+</body>
+</html>

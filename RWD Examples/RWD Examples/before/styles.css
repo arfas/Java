@@ -1,0 +1,28 @@
+body, .header, .navigation, .footer {
+background: #fff3e9;
+color: #794846;
+font: 12px "Georgia", "Times New Roman", serif;
+width: 960px; }
+.header, .navigation, .footer { clear: both;
+}
+.column {
+margin: 10px 10px 0 0;
+}
+.navigation { min-height: 25px;
+}
+.navigation ul li {
+width: 320px;
+display:inline;
+}
+.header {
+background:url(images/x.png) no-repeat; height: 200px;
+}
+#visit {
+width: 240px; float: left;
+}
+#arrows { width: 240px; float: right;
+list-style-image: url('images/arrow.png');
+}
+#main {
+margin: 10px 260px 0 250px; width: 460px;
+}

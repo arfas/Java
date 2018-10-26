@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Dynamic Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="js/libs/jquery-mobile/jquery.mobile.min.css" />    
+        <script src="js/libs/jquery/jquery.min.js"></script>   
+        <script src="js/libs/jquery-mobile/jquery.mobile.min.js"></script>    
+    </head>
+    <body>
+        <div data-role="page" id="homepage">
+            <div data-role="header">
+                <h1>Dynamic Pages</h1>
+            </div>
+            <div data-role="content">
+                <ul id="langList" data-role="listview" data-inset="true"></ul>
+            </div>
+        </div>
+        <script>
+            $("#homepage").bind("pagebeforecreate", function(e) {
+                //load in our languages
+                $.get("languages.json", {}, function(res, code) {
+                    var s = "";
+                    for (var i = 0; i < res.length; i++) {
+                        s += "<li><a href='lang_page.html?id=" + res[i].id + "'>" + res[i].name + "</a></li>";
+                    }
+                    $("#langList").html(s).listview("refresh");
+                }, "json");
+            });
+            $(document).on("pagebeforeshow", "#languagepage", function(e) {
+                var thisPage = $(this);
+                var thisUrl = thisPage.data("url");
+                var thisId = thisUrl.split("=")[1];
+                $.get("language" + thisId + ".json", {}, function(res, code) {
+                    $("h1", thisPage).text(res.name);
+                    s = "<p>" + res.name + " is a " + res.category + " language and cross-plaform is " + res.crossplatform + "</p>";
+                    $("#contentArea", thisPage).html(s);
+                }, "json");
+            });
+        </script>
+    </body>
+</html>

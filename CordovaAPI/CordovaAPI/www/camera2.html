@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Note-taking Application</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="js/libs/jquery-mobile/jquery.mobile.min.css" />
+        <script type="text/javascript" src="js/libs/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery-mobile/jquery.mobile.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script>
+            function takePhoto() {
+                navigator.camera.getPicture(onCameraSuccess, onCameraError, {
+                    quality: 50,
+                    destinationType: Camera.DestinationType.FILE_URI
+                });
+            }
+            function onCameraSuccess(imageURL) {
+                navigator.notification.alert("onCameraSuccess: " + imageURL);
+                //Get a handle to the image container div
+                ic = document.getElementById('imageContainer');
+                //Then write an image tag out to the div using the
+                //URL we received from the camera application. 
+                ic.innerHTML = '<img src="' + imageURL + '" width="50%" />';
+            }
+            function onCameraError(e) {
+                console.log(e);
+                navigator.notification.alert("onCameraError: " + e);
+            }
+        </script>
+    </head>
+    <body>
+        <div data-role="page">
+            <div data-role="header" data-position="fixed">
+                <a href="index.html" rel="prev" data-icon="back">Back</a>
+                <h1>Camera 2</h1>
+            </div>
+            <div data-role="content">
+                <p>
+                    Using the PhoneGap Camera API <br />
+                    <input type="button" value="Take a Picture" onclick="takePhoto();">
+                <div id="imageContainer"></div>
+                </p>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>NPU HTML Course</h1>
+            </div>
+        </div>
+    </body>
+</html>

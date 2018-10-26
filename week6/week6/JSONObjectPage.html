@@ -1,0 +1,28 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Date Picker Demo</title>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script>
+      function Book(title, price, publisher) {
+          this.title = title;
+          this.price = price;
+          this.publisher = publisher;
+      }
+      $(document).ready(function () {
+          var book = new Book("Advanced C++", 39.99, "NPU");
+          var bookString = JSON.stringify(book);
+          alert(bookString);
+
+          var bookObject = JSON.parse(bookString);
+          alert("Title=" + bookObject.title + ", Price=" + bookObject.price + ", Publisher=" + bookObject.publisher);
+      });
+      
+  </script>
+</head>
+<body>
+    <section id="books">
+    </section>
+</body>
+</html>

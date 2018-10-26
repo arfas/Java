@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Customer's Requests</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var Customer = new Object();
+            Customer.name = "Peter Lee";
+            Customer.emailAddress = "peter@yahoo.com";
+            Customer.phone = "408-222-7777";
+            Customer.requestedDate = new Date(2014, 7, 4, 20);
+            
+            document.write("<h1>Customer's Request Order</h1>"); 
+            document.write("<p>Customer: " + Customer.name); 
+            document.write("<br />E-mail address: " + Customer.emailAddress); 
+            document.write("<br />Phone number: " + Customer.phone);
+            document.write("<br />Requested Date: " + Customer.requestedDate.toLocaleString() + "</p>");
+        </script>
+    </body>
+</html>

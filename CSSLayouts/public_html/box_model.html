@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Box Model</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                border: 2px solid black;
+                margin: 10px;
+            }
+            div {
+                border: 2px solid black;
+                width: 500px;
+                margin: 20px;
+                padding: 10px;
+            }
+            h1, p {
+                border: 1px dashed black;
+                padding: 10px;
+            }
+            h1 {
+                margin: .5em 0, 0.25em; /* .5em top, 0 right and left, .25em bottom */
+                padding-left: 15px;
+            }
+            p {
+                margin: 0;
+                padding-left: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>What you can buy for $350,000</h1>
+            <p>Among other factors, median home values can vary drastically depending 
+               on the state, city and neighborhood.</p>
+        </div>
+    </body>
+</html>

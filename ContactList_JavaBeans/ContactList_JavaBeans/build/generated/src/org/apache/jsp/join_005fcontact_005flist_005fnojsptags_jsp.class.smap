@@ -1,0 +1,18 @@
+SMAP
+join_005fcontact_005flist_005fnojsptags_jsp.java
+JSP
+*S JSP
+*F
++ 0 join_contact_list_nojsptags.jsp
+join_contact_list_nojsptags.jsp
+*L
+1,14:45
+15,5:60
+19,4:65
+23:69,3
+24,3:72
+27:75,3
+28,3:78
+31:81,3
+32,15:84
+*E

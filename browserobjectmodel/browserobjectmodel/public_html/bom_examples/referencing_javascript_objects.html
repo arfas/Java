@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Referencing Javascript Objects</title>
+        <script type="text/javascript">
+            function showMe() {
+                var message;
+                message = document.myForm.book1.value + "\r";
+                message += document.myForm.book2.value + "\r";
+                message += document.myForm.book3.value + "\r";
+                message += "Alternatively, we can use elements array:" + "\r";
+                message += document.myForm.elements[0].value + "\r";
+                message += document.myForm.elements[1].value + "\r";
+                message += document.myForm.elements[2].value + "\r";
+                document.myForm.info.value = message;
+            }                
+        </script>
+    </head>
+    <body>
+        <form method="post" action="" name="myForm">
+            <input type="text" name="book1" value="title1" /><br />
+            <input type="text" name="book2" value="title2" /><br />
+            <input type="text" name="book3" value="title3" /><br />
+            <input type="button" name="show" onclick="showMe()" value="Show Me" />
+            <hr />
+            <textarea name="info" rows="10"></textarea>
+        </form>
+        
+    </body>
+</html>

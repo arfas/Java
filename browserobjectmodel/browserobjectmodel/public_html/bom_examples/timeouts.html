@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The setTimeout method</title>
+        <script type="text/javascript">
+            var buttonNotPressed = setTimeout("window.alert('You must press the OK button to continue!')",10000);
+            function buttonPressed() {
+                clearTimeout(buttonNotPressed);window.alert("The setTimeout() method was cancelled!");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>The setTimeout method</h1>
+        <input type="button" value=" OK "onclick="buttonPressed();" />
+    </body>
+</html>

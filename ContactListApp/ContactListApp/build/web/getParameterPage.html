@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <p>Here's a form that contains 4 check boxes and 3 radio buttons:</p>
+        <form action="getParameterDisplay.jsp" method="post">
+            <input type="checkbox" name="addEmail" checked>
+            Yes, add me to your mailing list.<br>
+            <br>
+            Contact me by:<br>
+            <input type="radio" name="contactVia" value="Email">Email 
+            <input type="radio" name="contactVia" value="Postal Mail">Postal mail 
+            <input type="radio" name="contactVia" value="Both" checked>Both<br>
+            <br>
+            I'm interested in these courses:<br>
+            <input type="checkbox" name="java">Java<br>
+            <input type="checkbox" name="cpp">C++<br>
+            <input type="checkbox" name="php">PHP<br>
+            <input type="submit" value="Submit"><br><br>
+        </form>
+        <hr>
+        <p>Here's a form that contains one list box with 3 options:</p>
+        <form action="getParameterDisplay.jsp" method="get">
+            Select a country:<br>
+            <select name="country" multiple>
+                <option value="USA" selected>United States
+                <option value="Canada">Canada
+                <option value="Mexico">Mexico
+            </select><br>
+            (To select more than one country, hold down the Ctrl key.)<br>
+            <input type="submit" value="Submit"><br><br>
+        </form>
+        <hr>
+    </body>
+</html>

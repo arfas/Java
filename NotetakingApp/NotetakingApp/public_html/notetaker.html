@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Note-taking Application</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="jquery.mobile-1.4.2.min.css" />
+        <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="jquery.mobile-1.4.2.min.js"></script>
+        <script src="application.js"></script>
+    </head>
+    <body>
+        <div data-role="page" id="homepage">
+            <div data-role="header">
+                <h1>Note-taking App</h1>
+            </div>
+            <div data-role="content">
+                <p>
+                    This is my note-taking application.
+                </p>
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="#listnotes">List Notes</a></li>
+                    <li><a href="#addnotes">Add Notes</a></li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <h4>&copy; NPU 2014-2015</h4>
+            </div>
+        </div>
+        <div data-role="page" id="listnotes">
+            <div data-role="header">
+                <a href="#homepage">Home</a>
+                <h1>Note-taking App</h1>
+                <a href="#addnotes">Add Notes</a> 
+            </div>
+            <div data-role="content">
+                <ul id="notesList" data-role="listview" data-inset="true">
+                    <li data-role="list-divider">Your Notes</li>
+                    <li id="noNotes">You have no notes</li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <h4>&copy; NPU 2014-2015</h4>
+            </div>
+        </div>
+        <div data-role="page" id="addnotes">
+            <div data-role="header">
+                <a href="#homepage">Home</a>
+                <h1>Note-taking App</h1>
+                <a href="#listnotes">List Notes</a> 
+            </div>
+            <div data-role="content">
+                <form>
+                    <div>
+                        <input id="title" type="text" placeholder="Add a note" />
+                    </div>
+                    <div>
+                        <textarea id="note" placeholder="The content of your note"></textarea>
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <input id="btnReset" type="submit" value="Reset" />
+                        </div>
+                        <div class="ui-block-b">
+                            <input id="btnAddNote" type="button" value="Add Note" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div data-role="footer">
+                <h4>&copy; NPU 2014-2015</h4>
+            </div>
+        </div>
+    </body>
+</html>

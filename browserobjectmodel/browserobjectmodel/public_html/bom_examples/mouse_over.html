@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mouse Events</title>
+        <script type="text/javascript">
+            var img = "dog1.png";
+            function warnUser() {
+                return window.confirm("This link is only for CS557 student. Are you sure you want to continue?");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Mouse Events</h1>
+        <img src="dog1.png"  alt="Banner ads" onclick="img = (img == 'dog1.png')? 'dog2.png' : 'dog1.png'; this.src=img;" />
+        <hr />
+        <a href="http://www.npu.edu" onclick="return warnUser();">CS557 Course</a>
+    </body>
+</html>

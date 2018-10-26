@@ -1,0 +1,15 @@
+extends layout
+block content
+    .container
+        header
+            h1 Administration
+            hr
+            a(href="/") Home
+            span  | 
+            a(href="#/") List
+            span  | 
+            a(href="#/add") Add
+            span  |
+            a(href="#/cart") Cart
+        section(ng-view)
+    script(src='/javascripts/admin.js')

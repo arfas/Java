@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<booklist>
+  <book>
+    <title>Advanced ASP.NET</title>
+    <price>59.99</price>
+    <publisher>Apress</publisher>
+  </book>
+  <book>
+    <title>JavaScript and jQuery</title>
+    <price>49.99</price>
+    <publisher>Sams</publisher>
+</book>
+  <book>
+    <title>Advanced C++</title>
+    <price>39.99</price>
+    <publisher>NPU</publisher>
+</book>
+</booklist>

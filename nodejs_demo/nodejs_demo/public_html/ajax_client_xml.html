@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Simple XML fie Server</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var httpRequest = new XMLHttpRequest(); 
+            function getFile() {
+                httpRequest.abort(); 
+                httpRequest.open("get","http://localhost:8080"); 
+                httpRequest.send(null); 
+                httpRequest.onreadystatechange = getInfo; 
+            }
+            function getInfo() {    
+                if (httpRequest.readyState == 4 && httpRequest.status == 200) {        
+                    var response = httpRequest.responseXML;      
+                    var order = response.getElementsByTagName("order");
+                    alert(order[0].childNodes[0].nodeValue);
+                } 
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" onclick="getFile();" value="Get File" />
+    </body>
+</html>

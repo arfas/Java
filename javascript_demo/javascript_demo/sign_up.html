@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Northwestern Polytechnic University</title>
+        <script>
+            /*
+             window.onload = function () {
+             var errorText = $("email_error").firstChild.nodeValue;
+             $("email_error").firstChild.nodeValue = "Invalid Entry.";
+             //$("email_address").nextElementSibling.firstChild.nodeValue = "";
+             }
+             */
+            var $ = function(id) {
+                return document.getElementById(id);
+            }
+            function checkEmailAddress() {
+                $("email_error").firstChild.nodeValue = "Invalid Entry.";
+                //$("email_address").nextElementSibling.firstChild.nodeValue = "";
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Please sign up for free JavaScript class</h1>
+        <form id="signup_form" name="signup_form" action="join.html" method="get">
+            <label for="email_address">Email Address:</label>
+            <input type="text" id="email_address">
+            <span id="email_error">*</span><br>
+            <label>&nbsp;</label>
+            <input type="button" id="join_list" value="Join our class" onclick="checkEmailAddress();"> 
+        </form>
+    </body>
+</html>

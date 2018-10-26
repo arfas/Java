@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            aside {
+                margin: 0;
+                padding: 0;
+                width: 240px;
+                float: left;
+                position: absolute;
+            }
+            article {
+                width: 440px;
+                margin-left: 260px;
+            }
+
+        </style>
+        <script src="jquery-1.11.2.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                // add h2 heading to the aside
+                $("aside").append("<h2>Table of contents</h2>");
+
+                // wrap h2 text in a tags
+                $("article h2").wrapInner("<a></a>");
+
+                // add ids to the <a> tags
+                $("article a").each(function (index) {
+                    var id = "heading" + (index + 1);
+                    $(this).attr("id", id);
+                });
+
+                // clone article <a> tags and insert them into the aside
+                $("article a").clone().insertAfter($("aside h2"));
+
+                // remove the id attributes from the <a> tags
+                $("aside a").removeAttr("id");
+
+                // add the href attributes to the <a> tags
+                $("aside a").attr("href", function (index) {
+                    var href = "#heading" + (index + 1);
+                    return href;
+                });
+
+                // add h3 to wrap the <a> tags in the <aside>
+                $("aside a").wrap("<h3></h3>");
+
+                // wrap <a> tag around h1 text
+                $("h1").wrapInner("<a id='top'></a>");
+
+                // insert "back to top" <a> tags after each topic
+                $("article h2").before("<a href='#top'>Back to top</a>");
+                $("article a:first").remove();
+                $("article p:last").after("<a href='#top'>Back to top</a>");
+   
+            });
+        </script>
+    </head>
+    <body>
+        <h1>4 News</h1>
+        <aside></aside>	
+        <article>
+            <h2>Vibrating bicycle senses traffic</h2>
+            <p id="news1">Dutch scientists have developed a smart bicycle that uses sensors, 
+                wireless technology and video to warn riders of traffic dangers. 
+                Ben Gruber reports. </p>
+            <h2>Weird and wonderful world of tech</h2>
+            <p id="news2">Described by the designers as the first “wireless oral health 
+                smartphone device”, Mint is a pocket-sized device lets users 
+                measure breath quality. This device communicates wirelessly to 
+                Breathometer, a smartphone application, and gives results to users.</p>
+            <h2>Samsung Galaxy S6 leak hints at a slim, glass-backed body</h2>
+            <p id="news3">HTC isn't the only mobile company having trouble keeping its 2015 
+                flagship phone under wraps. XDA-Developers forum member reefur has 
+                posted photos of what's believed to be a prototype Samsung Galaxy S6 
+                for AT&T. The tipster was understandably worried about giving it a 
+                spin, but he notes that this handset is "pretty slim" and more 
+                upscale than Galaxy S phones of the past.</p>
+            <h2>Google Officially Unveils Travel Sites-Killer</h2>
+            <p id="news4">Google Inc. has officially unveiled its new service that had travel 
+                sites merging in fear of obsolescence -- Google Flights. The tech 
+                giant said Wednesday that it has finalized the service, which will 
+                display flight costs and travel deals right on a tab within its 
+                main search page.</p>
+        </article>
+    </body>
+</html>

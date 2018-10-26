@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>jQuery Mobile Dialogs</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="jquery.mobile-1.4.2.min.css" />
+        <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="jquery.mobile-1.4.2.min.js"></script>
+    </head>
+    <body>       
+        <div data-role="page" id="first">
+            <div data-role="panel" id="leftPanel">
+                This is the left panel.
+                <p><a data-role="button" data-rel="close">Close</a></p>
+            </div>
+            <div data-role="header">
+                <h1>Test Panel</h1>
+            </div>
+            <div data-role="content">
+                <a href="#leftPanel" data-role="button">Open Left Panel!</a>
+                <a href="#rightPanel" data-role="button">Open Right Panel!</a>
+            </div>
+            <div data-role="panel" data-position="right" id="rightPanel">
+                This is the right panel.
+                <p><a data-role="button" data-rel="close">Close</a></p>
+            </div>
+        </div>
+    </body>
+</html>

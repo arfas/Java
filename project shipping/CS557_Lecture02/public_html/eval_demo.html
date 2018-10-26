@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>eval() example</title>
+        <script type="text/javascript">
+            function execute() {
+                var exp = document.myForm.expression.value;
+                var result = eval(exp);
+                document.myForm.result.value = result;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>eval() example</h1>
+        <form method="post" action="" name="myForm">
+            Enter your expression: <br />
+            <input type="text" name="expression" value="" style="width: 240px" />
+            <input type="button" value="Evaluate" onclick="execute()"/>
+            <hr>
+            Result: 
+            <input type="text" value="" name="result"/>
+        </form>
+    </body>
+</html>

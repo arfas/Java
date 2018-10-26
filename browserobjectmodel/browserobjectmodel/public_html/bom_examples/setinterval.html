@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The setInterval method</title>
+        <script type="text/javascript">
+            var curBanner="cycle1";
+            var begin;
+            function changeBanner() {
+                if (curBanner == "cycle2") {
+                    document.images[0].src = "dog1.png";
+                    curBanner = "cycle1";
+                }else {
+                    document.images[0].src = "dog2.png";
+                    curBanner = "cycle2";
+                }
+            }
+
+        </script>
+    </head>
+    <body onload="begin=setInterval('changeBanner()',2000);">
+        <h1>The setInterval method</h1>
+        <img src="dog1.png"  alt="Banner images" />
+        <hr />
+        <input type="button" name="cleartimer" value="Clear Timer" onclick="clearInterval(begin);" />
+    </body>
+</html>

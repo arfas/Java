@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <title>Geolocation and Google Map</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script>  
+        function initGeolocation() {  
+            navigator.geolocation.getCurrentPosition(getLocation);  
+        }  
+       	function getLocation(position) {  
+			var url = "http://maps.google.com/maps/api/staticmap?sensor=false&center=" + 
+				position.coords.latitude + "," +  
+				position.coords.longitude + "&zoom=14&size=300x400&markers=color:red|" +  
+				position.coords.latitude + "," + 
+				position.coords.longitude;  
+			$("#map").attr("src", url);
+		}
+    </script> 
+</head>
+<body onLoad="initGeolocation()">
+    <p>Your current location is:</p>
+    <img src="" id="map">       
+</body>
+</html>

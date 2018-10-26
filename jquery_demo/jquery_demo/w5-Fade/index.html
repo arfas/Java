@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>jQuery Fade Effect</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#clickme").click(function() {
+                    $("img").fadeToggle(3000);
+                    $("#mybox").slideToggle(10000);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h2>jQuery Fade Effect</h2>
+        <div id="clickme">Show me NPU logo</div>
+        <div id="mybox">
+            <img src="http://www.nmun.org/downloads/NPU_logo.gif">
+        </div>
+    </body>
+</html>
+

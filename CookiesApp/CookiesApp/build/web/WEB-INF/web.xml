@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>ValidateUserServlet</servlet-name>
+        <servlet-class>controller.ValidateUserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveCookiesServlet</servlet-name>
+        <servlet-class>controller.RemoveCookiesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterUserServlet</servlet-name>
+        <servlet-class>controller.RegisterUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ValidateUserServlet</servlet-name>
+        <url-pattern>/validateUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveCookiesServlet</servlet-name>
+        <url-pattern>/removeCookies</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterUserServlet</servlet-name>
+        <url-pattern>/registerUser</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

@@ -1,0 +1,170 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+House {
+font-family: Arial;
+}
+#myForm {
+position: absolute;
+top: 400px;
+}
+#roof {
+position: absolute;
+top: 50px;
+width: 80%;
+height: 100px;
+background-color: #000000;
+text-align: center;
+}
+#window1 {
+position: absolute;
+left: 10%;
+top: 170px;
+background-color: #FFFFFF;
+border: 3px solid black;
+border-radius: 50%;
+width: 80px;
+height: 80px;
+}
+
+#window2 {
+position: absolute;
+right: 30%;
+top: 170px;
+background-color: #FFFFFF;
+border: 3px solid black;
+border-radius: 50%;
+width: 80px;
+height: 80px;
+}
+#wall{
+ position:absolute;
+ left:6%;
+ top:150px;
+ width:70%;
+ height :200px;
+ background-color: #A9A9A9;
+ text-align:center;
+}
+
+#door{
+position:absolute;
+right:52%;
+top:170px;
+width:18%;
+height :180px;
+background-color: #008080;
+text-align:center;
+}
+
+
+</style>
+<script>
+var myHouse = {
+roofColor: "black",
+wallColor:"grey",
+doorColor:"blue",
+Height: "80%",
+Width:"80%",
+price: 10000,
+radius:"80%"
+};
+window.onload = function () {
+document.getElementById("price").innerHTML = myHouse.price;
+
+};
+function customize() {
+    
+
+
+myHouse.color = document.getElementById("doorColor").value;
+
+
+
+document.getElementById("door").style.backgroundColor = myHouse.color;
+}
+function customize1() {
+    myHouse.color = document.getElementById("wallColor").value;
+    document.getElementById("wall").style.backgroundColor = myHouse.color;
+}
+function customize2(){
+    myHouse.color = document.getElementById("roofColor").value;
+document.getElementById("roof").style.backgroundColor = myHouse.color;
+}
+function circle() {
+    myHouse.radius=document.getElementById("radius").value;
+    document.getElementById("window1").style.borderRadius=myHouse.radius;
+    
+    document.getElementById("window2").style.borderRadius=myHouse.radius;
+
+}
+</script>
+</head>
+<body>
+<div id="House">
+This <span id="modelyear"></span> is my dream house and it is worth $ <span id="price"></span>
+<div id="roof">
+</div>
+<div id="wall">
+</div>
+<div id="door">
+</div>
+<div id="window1"></div>
+<div id="window2"></div>
+</div>
+    
+<div id="myForm">
+    
+<hr />
+Roof Size: 
+<br/>
+Height: <input type="text" id="Height" value="80%" />
+Width: <input type="text" id="Width" value="80%" />
+<br />
+Roof:
+<select id="roofColor">
+<option value="blue">Blue</option>
+<option value="green">Green</option>
+<option value="Red">Red</option>
+<option value="black" selected>Black</option>
+</select>
+<button onclick="customize2();">Customize</button>
+<hr />
+
+<br/>
+
+Wall:
+<select id="wallColor">
+<option value="silver">Blue</option>
+<option value="green">Green</option>
+<option value="Red">Red</option>
+<option value="blue" selected>Silver</option>
+</select>
+<button onclick="customize1();">Customize</button>
+<hr />
+<br/>
+Door:
+<select id="doorColor">
+<option value="silver">Silver</option>
+<option value="green">Green</option>
+<option value="Red">Red</option>
+<option value="teal" selected>Blue</option>
+</select>
+<button onclick="customize();">Customize</button>
+<hr />
+Window Size:
+<br/>
+radius:<input type="text" id="radius" value="80%"/>
+    
+
+
+<br/>
+<button onclick="circle();">Customize</button>
+
+
+</div>
+</body>
+</html>

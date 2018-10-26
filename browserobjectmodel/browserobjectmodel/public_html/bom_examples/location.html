@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The location object</title>
+    </head>
+    <body>
+        <h1>The location object</h1>
+        <img src="dog1.png"  alt="Banner ads" onclick="img = (img == 'dog1.png')? 'dog2.png' : 'dog1.png'; this.src=img;" />
+        <hr />
+        <input type="button" name="assign" onclick="location.assign('http://www.npu.edu');" value="Go to NPU website"/><br />
+        <input type="button" name="reload" onclick="location.reload(true);" value="Reload the current page." /><br />
+        <input type="button" name="replace" onclick="location.replace('http://secure.npu.edu');" value="Replace the current page." /><br />
+    </body>
+</html>

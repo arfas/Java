@@ -1,0 +1,10 @@
+<books>
+    <book>
+        <title>Programming in C++</title>
+        <price>56.99</price>
+    </book>
+    <book>
+        <title>Programming in Java</title>
+        <price>76.99</price>
+    </book>
+</books>

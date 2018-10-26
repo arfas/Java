@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    
+	<head>
+          
+		<title>Sign up Confirmation</title>
+		<script src="signup.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			window.onload = function () {
+				showCustomer();
+                                f();
+			};
+			function showCustomer() {
+				var divCustomer = document.getElementById("customer");
+				
+				customer = getCustomer();
+				divCustomer.innerHTML = JSON.stringify(customer);
+                            }
+			function f(){
+                            
+                        
+                        
+        var divCustomer = document.getElementById("customer");
+			customer = getCustomer();
+  	divCustomer.innerHTML = JSON.stringify(customer);
+          
+    document.writeln("<h3>Customers Table</h3>");
+
+  document.writeln("<style>");
+            document.writeln("table {");
+    document.writeln("font-family: arial, sans-serif;");
+    document.writeln("border-collapse: collapse;");
+    document.writeln("width: 100%;");
+document.writeln("}");
+
+document.writeln("td, th {");
+   document.writeln(" border: 5px solid #dddddd;");
+    document.writeln("text-align: left;");
+    document.writeln("padding: 8px;");
+document.writeln("}");
+
+document.writeln("</style>");
+           document.writeln("<table style = width:100% >");
+          document.writeln("<tr>");
+           document.writeln("<th><b>Name</b></th>");
+           document.writeln("<th>Phoneno</th>");
+           document.writeln("<th>Email</th>");
+           document.writeln("<th>Password</th>");
+           document.writeln("<th>Address</th>");
+           document.writeln("<th>City</th>");
+           document.writeln("<th>State</th>");
+           document.writeln("<th>Zipcode</th>");
+           document.writeln("<th>Country</th>");
+           document.writeln("</tr>");
+           document.writeln("<tr>");
+           document.writeln("<td>"+customer.fullname+"</td>");
+           document.writeln("<td>"+customer.phoneno+"</td>");
+           document.writeln("<td>"+customer.email+"</td>");
+           document.writeln("<td>"+customer.password+"</td>");
+           document.writeln("<td>"+customer.address+"</td>");
+           document.writeln("<td>"+customer.city+"</td>");
+           document.writeln("<td>"+customer.state+"</td>");
+           document.writeln("<td>"+customer.zipcode+"</td>");
+           document.writeln("<td>"+customer.country+"</td>");
+           document.writeln("</tr>");
+           
+           document.writeln("</table>");
+         
+       
+                        }
+		</script>
+                
+	</head>
+	<body>
+            
+		<hr />
+		<div id="customer">NPU</div>
+                 
+      
+</body>
+</html>

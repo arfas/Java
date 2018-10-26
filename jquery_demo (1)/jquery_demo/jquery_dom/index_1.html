@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script>
+            var $m;
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div id="high">
+            <div class="box">To be deleted.</div>
+        </div>
+        <p><input type="button" onclick="$('div#high').remove()" value="remove" /></p>
+        <div id="high">
+            <p>abc</p>
+            <p>abc</p>
+            <img src="bb.png"/>
+        </div>
+        <p><input type="button" onclick="$m = $('div p').detach();" value="detach" /></p>
+        <div id="menu_systems">
+            <ul>
+                <li>
+                    <ul class="menu_list">
+                        <li class="ms1">ms1</li>
+                        <li>a</li>
+                        <li>b</li>
+                        <li>c</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="menu_list">
+                        <li>d</li>
+                        <li>e</li>
+                        <li class="ms2">ms2</li>
+                        <li>f</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <p><input type="button" onclick="$('li.ms1').detach()" value="detach ms1" /></p>
+        <p><input type="button" onclick="$('.ms1').parent().remove()" value="remove ms1's parent" /></p>
+        <p><input type="button" onclick="$('.menu_list').children().remove()" value="remove menu_list's children" /></p>
+        <p><input type="button" onclick="$('.ms2').prev().remove()" value="remove ms2's previous node" /></p>
+        <p><input type="button" onclick="$('.ms2').next().remove()" value="remove ms2's next node" /></p>
+        <p><input type="button" onclick="$('.menu_list').parent().next().remove()" value="remove menu_list's parent next remove" /></p>
+        <p><input type="button" onclick="$('.menu_list').replaceWith('<li class=mysql><em>MySql Database</em></li>')" value="remove menu_list by mysql" /></p>
+        <p><input type="button" onclick="$('.menu_list').after('<li class=linux><em>Linux OS</em></li>')" value="Insert li after menu_list " /></p>
+        <p><input type="button" onclick="$('.menu_list').before('<li class=windows><em>Windows OS</em></li>')" value="Insert li before menu_list " /></p>
+        <p><input type="button" onclick="$('.menu_list').after($m)" value="Reattach $m after menu_ssytem " /></p>
+    </body>
+</html>

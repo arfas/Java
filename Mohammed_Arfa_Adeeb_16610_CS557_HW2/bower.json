@@ -1,0 +1,13 @@
+{
+    "name": "Mohammed_Arfa_Adeeb_16610_CS557_HW2",
+    "version": "1.0.0",
+    "main": "path/to/main.css",
+    "ignore": [
+        ".jshintrc",
+        "**/*.txt"
+    ],
+    "dependencies": {
+    },
+    "devDependencies": {
+    }
+}

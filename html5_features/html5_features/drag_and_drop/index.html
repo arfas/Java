@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <title>NPU Programming Courses</title>
+	<style>
+	    body {
+	    	margin: 2em;
+	    }
+		img {
+			float:left;
+			margin:10px;
+			width:75px;
+			height:100px;}
+		#cart {
+			min-height:100px;
+			width:275px;
+			border:3px dashed #ccc;
+			margin:10px;
+			padding:10px;
+			clear:left;}
+		#courses input {
+			margin:10px;
+			border:2px solid black;
+			width:100px;
+			height:30px;}
+    </style>
+</head>
+
+<body>
+    <section id="courses">
+        <h1>NPU Courses</h1>
+        <img src="images/html5.jpg" draggable="true" ondragstart="drag(this, event)" id="HTML5">
+        <img src="images/cs.jpg" draggable="true" ondragstart="drag(this, event)" id="C#">
+        <img src="images/java.jpg" draggable="true" ondragstart="drag(this, event)" id="JAVA">
+        <img src="images/cpp.jpg" draggable="true" ondragstart="drag(this, event)" id="C++">
+        <div id="cart"
+             ondrop="drop(this, event)" 
+        	 ondragenter="return false" 
+             ondragover="return false">
+        	<strong>Shopping Cart (Drag courses here)</strong>
+        </div>
+		<script>
+        function drag(target, e) {
+            e.dataTransfer.setData('Text', target.id);
+        }
+        function drop(target, e) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            }
+            target.innerHTML += '<p>' + e.dataTransfer.getData('Text') + '</p>';
+        }
+        </script>
+        <input type="button" value="Checkout">
+    </section>
+    
+    
+</body>
+</html>

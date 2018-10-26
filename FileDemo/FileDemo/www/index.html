@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>File Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="js/libs/jquery-mobile/jquery.mobile.min.css" />
+        <script type="text/javascript" src="js/libs/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery-mobile/jquery.mobile.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/randomStr.js"></script>
+        <script type="text/javascript">
+            function onBodyLoad() {
+                //During testing, Let me know we got this far
+                alert("onBodyLoad");
+                //Add the Chordova deviceready event listener
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+
+            function onDeviceReady() {
+                //During testing, Let me know PhoneGap actually initialized
+                alert("onDeviceReady");
+            }
+        </script>
+    </head>
+    <body onload="onBodyLoad()">
+        <section id="main" data-role="page" >
+            <header data-role="header">
+                <h1>File API Demo</h1>
+            </header>
+            <div data-role="content">
+                <p>
+                    Select file system:
+                    <input type="button" value="Temporary" onclick="processDir(LocalFileSystem.TEMPORARY);">
+                    <input type="button" value="Persistent" onclick="processDir(LocalFileSystem.PERSISTENT);">
+                </p>
+            </div>
+        </section>
+        <section id="dirList" data-role="page">
+            <header data-role="header" data-add-back-btn="true">
+                <h1>File API Demo</h1>
+                <a onclick="writeFile();" data-icon="plus" class="ui-btn-right">Write</a>
+            </header>
+            <div data-role="content">
+                <p>
+                    File system contents:
+                </p>
+                <div id="dirEntries"></div>
+                <hr />
+                <div id="writeInfo"></div>
+            </div>
+        </section>
+        <section id="fileDetails" data-role="page">
+            <header data-role="header"  data-add-back-btn="true">
+                <h1>File API Demo</h1>
+            </header>
+            <div data-role="content">
+                <p>
+                    <em>Directory Entry Information</em>
+                </p>
+                <hr />
+                <div id="fileInfo"></div>
+                <hr />
+                <p>
+                    <em>File Metadata:</em>
+                </p>
+                <div id="fileMetadata"></div>
+                <input type="button" value="View File" onclick="viewFile();">
+                <input type="button" value="Remove File" onclick="removeFile();">
+            </div>
+        </section>
+        <section id="viewFile" data-role="page">
+            <header data-role="header"  data-add-back-btn="true">
+                <h1>File API Demo</h1>
+            </header>
+            <div data-role="content">
+                <div id="viewFileName"></div>
+                <div id="fileContents"></div>
+                <hr />
+                <div id="readInfo"></div>
+            </div>
+        </section>
+    </body>
+</html>

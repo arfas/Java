@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Date Picker Demo</title>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+  <link type="text/css" href="jquery-ui-1.10.3.custom/css/cupertino/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" />
+  <script>
+      $(document).ready(function () {
+          $('#datepicker').datepicker({ changeMonth: true });
+          $("#radiob").button();
+          $("#radio").buttonset();
+          $("#slide_me").slider({
+              value:20,
+              min: 0,
+              max: 100,
+              step: 5,  
+              slide: function (event, ui) {
+                  $("#my_value").val(ui.value);
+              }
+          });
+          $("#my_value").val($("#slide_me").slider("value"));
+      });
+  </script>
+</head>
+<body>
+   <input type="text" name="graduated_date"><br />
+   <input type="text" name="graduated_date" id="datepicker"><br /><br />
+   <input type="radio" id="radiob" name="radiox" />
+   <label for="radiob">Choice 1</label>
+   <br /><br />
+   <div id="radio">
+        <input type="radio" id="radio1" name="radio" />
+        <label for="radio1">Choice 1</label>
+        <input type="radio" id="radio2" name="radio" />
+        <label for="radio2">Choice 2</label>
+        <input type="radio" id="radio3" name="radio" />
+        <label for="radio3">Choice 3</label>
+    </div>
+    <br /><br />
+    <input type="text" id="my_value" readonly="readonly"/>
+    <div id="slide_me"></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Raffle</title>
+        <link rel="stylesheet" href="style.css" />
+        <script>
+            window.onload = function() {
+                var images = document.getElementsByClassName("guess");
+                for(var i = 0;  i < images.length; i++ ) {
+                    images[i].addEventListener("click", function(e) {
+                        // Generate a random price between 100 and 500
+                        var prize = Math.floor((Math.random() * 401) + 100);
+                        var newNode = document.createElement("P");
+                        newNode.innerHTML = "<strong>Your prize is " + prize + "</strong>";
+                        this.appendChild(newNode);
+                    });
+                }
+            };
+        </script>
+        <style>
+            div {
+                width: 20%;
+                height: 200px;
+                margin: 5px;
+                float: left;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Raffle</h1>
+        </header>
+        <section>
+            <div class="guess"><img src="img/coco.jpg"/></div>
+            <div class="guess"><img src="img/bobo.jpg"/></div>
+            <div class="guess"><img src="img/dodo.jpg"/></div>
+            <div class="guess"><img src="img/haha.jpg"/></div>
+        </section>
+    </body>
+</html>

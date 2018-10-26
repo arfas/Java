@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Customer's Requests</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function Customer(name, email, phone, requestedDate) {
+                this.name = name;
+                this.emailAddress = email;
+                this.phone = phone;
+                this.requestedDate = requestedDate;    
+                this.display = displayCustomer;
+            }
+            function displayCustomer() {
+                document.write("<h1>Customer's Request Order</h1>"); 
+                document.write("<p>Customer: " + this.name); 
+                document.write("<br />E-mail address: " + this.emailAddress); 
+                document.write("<br />Phone number: " + this.phone);
+                document.write("<br />Requested Date: " + this.requestedDate.toLocaleString() + "</p>");
+            }
+            
+            var newCustomer = new Customer("Peter Lee", 
+                "peter@yahoo.com", 
+                "408-222-7777", 
+                new Date(2014, 7, 4, 20));
+            newCustomer.display();
+            
+            var newCustomer2 = new Customer("Tom Lee", 
+                "tom@yahoo.com", 
+                "408-677-5678", 
+                new Date(2014, 8, 4, 20));
+            newCustomer2.display(); 
+        </script>
+    </body>
+</html>

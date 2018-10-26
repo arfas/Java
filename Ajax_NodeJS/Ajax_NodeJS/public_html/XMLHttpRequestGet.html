@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <script type="text/javascript">
+            var newsRequest = false;
+            function getRequestObject() {
+                try {
+                    httpRequest = new XMLHttpRequest();
+                    httpRequest.open("get", "http://localhost:8080?" + "agency=" + document.myform.agency.value, false);
+                    httpRequest.send(null);
+                    document.write(httpRequest.responseText);
+                }
+                catch (requestError) {
+                    window.alert("Your browser does not support AJAX!");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform" action="">
+            <input type="text" name="agency" size="100" value="" /><br>
+            <input type="button" onclick="getRequestObject()" value="Go to the above website" />
+        </form>
+    </body>
+</html>

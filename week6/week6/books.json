@@ -1,0 +1,17 @@
+﻿[
+	{
+		"title":"Advanced ASP.NET",
+		"price":"59.99",
+		"publisher":"Apress"
+	},
+	{
+		"title":"JavaScript and jQuery",
+		"price":"49.99",
+		"publisher":"Sams"
+	},
+	{
+		"title":"Advanced C++",
+		"price":"39.99",
+		"publisher":"NPU"
+	}
+]

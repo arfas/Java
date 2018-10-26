@@ -1,0 +1,17 @@
+<!DOCTYPE html > 
+<html ng-app="courseApp">  
+    <head>   
+        <script src="js/angular.min.js"></script>   
+        <script>
+            var course = angular.module("courseApp", []);
+            course.controller("courseCtrl", CourseCtrl);
+            function CourseCtrl($scope) {
+                var students = ["Tom", "Pete", "Nancy", "Lily"];
+                $scope.ourStudents = students;    
+            }
+        </script> 
+    </head> 
+    <body ng-controller='courseCtrl'>  
+        <h2>Number of Students: {{ ourStudents.length}}</h2> 
+    </body> 
+</html>

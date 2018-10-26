@@ -1,0 +1,54 @@
+<!DOCTYPE Html>
+<html>
+    <head>
+        <meta charset="utf~8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Bootstrap Nested Columns</title>
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+        <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- The example of nested columns -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col1">
+                    <h3>Column 1</h3>
+                    <!-- Nesting Starts -->
+                    <div class="row">
+                        <div class="col-md-6 col3">
+                            <h3>Column 4</h3>
+                        </div>
+                        <div class="col-md-6 col4">
+                            <h3>Column 5</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col2">
+                    <h3>Column 2</h3>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <!-- The example of offsetting columns -->
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3 col1">
+                <h1>Centering the Title!</h1>
+            </div>
+        </div>
+        <hr />
+        <!-- The example of reordering columns -->:3
+        <div class="row">
+            <div class="col-xs-9 col-xs-push-3">
+                <h1>Pushed Column</h1>
+            </div>
+            <div class="col-xs-3 col-xs-pull-9">
+                <h1>Pulled Column</h1>
+            </div>
+        </div>
+
+
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

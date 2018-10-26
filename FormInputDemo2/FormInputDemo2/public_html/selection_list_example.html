@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Selection List Example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script>
+            function checkData() {
+                var message = "The number of brands: " + document.forms[0].brand.length + "\r";
+                var selectedIndex = document.forms[0].brand.selectedIndex;
+                if (selectedIndex == -1)
+                    message += "No brand s selected.\r";
+                else
+					message += document.forms[0].brand.options[selectedIndex].text + " is selected.\r";
+
+					
+                document.forms[0].info.value = message;
+            }
+			function addBrand() {
+				document.forms[0].brand.selectedIndex = -1;
+				var newBrand = new Option("Fivestars", "Fivestars", false, true);
+				document.forms[0].brand.add(newBrand, 2);
+			}
+			function removeBrand() {
+				document.forms[0].brand.selectedIndex = 0;
+				document.forms[0].brand.remove(2);
+			}
+			
+        </script>
+    </head>
+    <body>
+        <h1>Great Computer Store</h1>
+        <h2>Laptop</h2>
+        <form action = "nowhere.html" method = "get">
+            <table border = "0">
+                <tr>
+                    <td style = "background:white;border:0"><strong>Brand</strong></td>
+                    <td style = "background:white;border:0"><strong>Price Range</strong></td></tr>
+                <tr>
+                    <td>
+                        <select name = "brand" multiple = "multiple" size = "6">
+                            <option value = "all" selected = "selected">All</option>
+                            <option value = "Apple">Apple</option>
+                            <option value = "Lenovo">Lenovo</option>
+                            <option value = "HP">HP</option>
+                            <option value = "samsung">Samsung</option>
+                            <option value = "Dell">Dell</option>
+                            <option value = "sony">Sony</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name = "price" size = "6">
+                            <option value = "299">Under $300</option>
+                            <option value = "599">$300 to $599</option>
+                            <option value = "999">$600 to $999</option>
+                            <option value = "1999">$1,000 to $1,999</option>
+                            <option value = "2999" selected = "selected">$2,000 to $2,999</option>
+                            <option value = "3000_plus">Over $3,000</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <input type="button" name="submit" value="Submit" onclick="checkData()"/><br>
+			<input type="button" name="add" value="Add New Brand" onclick="addBrand()"/><br>
+			<input type="button" name="remove" value="Remove Brand" onclick="removeBrand()"/><br>
+            <hr>
+            <textarea name="info" rows="10" cols="80"></textarea>
+        </form>
+    </body>
+</html>

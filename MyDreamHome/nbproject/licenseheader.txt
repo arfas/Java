@@ -1,0 +1,7 @@
+/* * Student Info: Name=MOHAMMED ARFA ADEEB, ID=16610
+* Suject: CS557C_HW1_Fall_2016
+* Author: Mohammed Arfa Adeeb
+* Filename: index.html
+* Date and Time: Sept 27, 2016 8:27:19 PM
+* Project Name: Mohammed_Arfa_Adeeb_16610_CS557C_HW1
+*/

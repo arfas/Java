@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>First jQuery Demo</title>
+        <style>
+            #change_me {
+                position: absolute;
+                top: 100px;
+                left: 400px;
+                font: 24px arial;
+            }
+            #up #down #color #disappear {
+                padding: 5px;
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    </head>
+    <body>
+        <button id="up">Go Up</button>
+        <button id="down">Go Down</button>
+        <button id="color">Change Color</button>
+        <button id="disappear">Hide/Show</button>
+        <div id="change_me">Do Something!</div>
+        <script>
+            $(document).ready(function() {
+                $("#up").click(function() {
+                    $("#change_me").animate({top: 30}, 200);
+                });//end up
+                $("#down").click(function() {
+                    $("#change_me").animate({top: 500}, 2000);
+                });//end down
+                $("#color").click(function() {
+                    $("#change_me").css("color", "purple");
+                });//end color
+                $("#disappear").click(function() {
+                    $("#change_me").toggle("slow");
+                });//end disappear
+            });
+        </script>
+    </body>
+</html>

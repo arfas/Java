@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            var bottomPosition = 10;
+            var leftPosition = 0;
+            function flyPlane() {
+                var airplane = document.getElementById("airplane");
+                
+                airplane.style.left = leftPosition + "px";
+                airplane.style.visibility = "visible";
+                leftPosition += 10
+                if (leftPosition >= window.innerWidth - 150 ) {
+                    leftPosition = 0;
+                }
+            }
+        </script>
+    </head>
+    <body onload="setInterval('flyPlane()', 100);"> 
+        <p>
+            <img src="airplane.gif" id="airplane" style="position: absolute;             
+                 left: -100px; bottom: 10px; 
+                 visibility: hidden"             
+                 alt="Image of a airplane" /> 
+
+
+        </p>
+
+
+    </body>
+</html>

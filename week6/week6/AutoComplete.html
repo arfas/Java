@@ -1,0 +1,29 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Date Picker Demo</title>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+  <link type="text/css" href="jquery-ui-1.10.3.custom/css/cupertino/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" />
+  <script>
+      $(document).ready(function () {
+          var myBooks =
+            	["ADO.NET", "ASP.NET", "C#", "C++", "CICS", "CSS", "C",
+            	 "F#", "HTML", "IMS", "Java", "JavaScript", "LINQ", "MySQL",
+            	 "Oracle SQL", "Obective-C", "PHP", "VB", "Web Development",
+            	 "Web Programming", "XHTML", "T\Perl"];
+          $("#books").autocomplete({
+              source: myBooks
+          });
+      });
+  </script>
+</head>
+<body>
+   <h1>Search our Book Database</h1>
+   <div class="ui-widget">
+       <label for="books">Book: </label>
+       <input id="books">
+   </div>
+</body>
+</html>

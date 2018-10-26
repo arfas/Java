@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mouseover and mouseout</title>
+    </head>
+    <body>
+        <a href="dog.html" onmouseover="this.style.textDecoration = 'underline';" 
+           onmouseout="this.style.textDecoration = 'none';">Dog Club</a> 
+
+        <a href="dogs.html" onmouseover="this.src = 'dog1.png';
+                this.style.color = 'Red '" onmouseout="this.src = 'dog2.png';
+                        this.style.color = 'Blue'">Dogs</a> 
+        <hr>
+        <img src="dog1.png" alt="Banner images" onmousedown="this.src='dog2.png'" 
+             onmouseup="this.src='dog1.png'" />
+        
+    </body>
+</html>

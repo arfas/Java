@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Page Transition Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="js/libs/jquery-mobile/jquery.mobile.min.css" />    
+        <script src="js/libs/jquery/jquery.min.js"></script>   
+        <script src="js/config3.js"></script>
+        <script src="js/libs/jquery-mobile/jquery.mobile.min.js"></script>    
+    </head>
+    <body>
+        <div data-role="page" id="third">
+            <div data-role="header">
+                <h1>Test</h1>
+            </div>
+            <div data-role="content">
+                <form>
+                    <div data-role="fieldcontain">
+                        <label for="isabsurl">Is Absolute URL?</label>
+                        <input type="text" name="isabsurl" id="isabsurl" value=""  />
+                        <div id="isabsurlresult"></div>
+                    </div>	
+                    <div data-role="fieldcontain">
+                        <label for="isrelurl">Is Relative URL?</label>
+                        <input type="text" name="isrelurl" id="isrelurl" value=""  />
+                        <div id="isrelurlresult"></div>
+                    </div>	
+                    <div data-role="fieldcontain">
+                        <label for="makeurl">Make URL Absolute</label>
+                        <input type="text" name="makeurl" id="makeurl" value="" placeholder="Relative URL" />
+                        <input type="text" name="makeurl2" id="makeurl2" value="" placeholder="Absolute URL" />
+                        <div id="makeurlresult"></div>
+                    </div>	
+                    <div data-role="fieldcontain">
+                        <label for="pathget">Path Get</label>
+                        <input type="text" name="pathget" id="pathget" value=""  />
+                        <div id="pathgetresult"></div>
+                    </div>	
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

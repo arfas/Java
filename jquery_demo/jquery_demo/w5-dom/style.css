@@ -1,0 +1,74 @@
+.topLayer{
+    width: 96%;
+    border: 1px solid gray;
+}
+header {
+    padding: 2%;
+    width: 96%;
+    height: 100px;
+    overflow: hidden;
+    border-bottom: 1px solid gray;
+}
+.leftCol {
+    float: left;
+    padding: 4%;
+    width: 41%;
+    height: 1000px;
+    border-right: 1px solid gray;
+   
+}
+.rightCol { 
+    float: right;
+    padding: 4%;
+    width: 41%;
+    height: 1000px;
+    border-left: 1px solid gray;
+}
+.bottom {
+    clear:both;
+    padding: 2%;
+    width: 96%;
+    height: 60px;
+    border-top: 1px solid gray;
+}
+.nav {
+    text-align: right;
+    float: right;
+    list-style: none;
+    padding-left: 15px;
+}
+.menu_systems li{
+    list-style-type: square;
+    padding-left: 10px;
+}
+.menu_list{
+    padding-bottom: 15px;
+}
+.menu_list li
+{
+    display: inline;
+    list-style-type: circle;
+    padding-left: 15px;
+}
+.os {
+    background-color: "#000000";   
+}
+.db {
+    color: "#000000";  
+}
+.cpu {
+    color: "#000000"; 
+}
+.ms {
+    color: "#000000"; 
+}
+.linux {
+    color: "#00FF00";  
+}
+.mysql {
+    color: "#00FF00"; 
+}
+.openSource 
+{
+    list-style-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhv46e8yCjWITtsqQrO0CAPG3PIeaCorY_sv8rmjOlzCv5rkgo'); 
+}	

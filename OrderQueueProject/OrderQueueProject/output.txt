@@ -1,0 +1,19 @@
+run:
+Starting the order queue.
+Starting 3 order takers, each producing 2 orders.
+Starting 2 order handlers.
+
+     OrderTaker threads            OrderHandler threads    
+============================  =============================
+Order #1 created by Thread-1
+Order #2 created by Thread-2
+                              Order #1 processed by Thread-3
+Order #3 created by Thread-0
+                              Order #2 processed by Thread-4
+Order #4 created by Thread-0
+Order #5 created by Thread-2
+Order #6 created by Thread-1
+                              Order #3 processed by Thread-3
+                              Order #4 processed by Thread-4
+                              Order #5 processed by Thread-3
+                              Order #6 processed by Thread-4

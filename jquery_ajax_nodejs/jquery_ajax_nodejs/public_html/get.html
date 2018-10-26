@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery $.get method</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="slide_show1.css">
+        <script src="jquery-1.11.2.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $.get("books.xml", function(data) {
+                    $("#book").html("");
+                    $(data).find("books").children().each(function(){
+                        var xmlDoc = $(this);
+                        $("#book").append("<h3>" +
+                            xmlDoc.find("title").text() + "</h3>" +
+                            xmlDoc.find("price").text() + "<br>");                             
+                    });
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <section id="book">
+            
+        </section>    
+    </body>
+</html>

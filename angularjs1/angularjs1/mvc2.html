@@ -1,0 +1,35 @@
+<!DOCTYPE html > 
+<html ng-app="guessNumber">  
+    <head>   
+        <script src="js/angular.min.js"></script>   
+        <script>
+            var guessModule = angular.module("guessNumber", []);
+            guessModule.controller("guessCtrl", GuessCtrl);
+            function GuessCtrl($scope) {
+                $scope.verifyGuess = function () {
+                    $scope.deviation = $scope.original - $scope.guess;
+                    $scope.noOfTries = $scope.noOfTries + 1;
+                }
+                $scope.initializeGame = function () {
+                    $scope.noOfTries = 0;
+                    $scope.original = Math.floor((Math.random() * 100) + 1);
+                    $scope.guess = null;
+                    $scope.deviation = null;
+                }
+                $scope.initializeGame();
+            }
+        </script> 
+    </head> 
+    <body ng-controller='guessCtrl'>  
+        <h2>Guess the Number !</h2>
+        <p>Guess the computer generated random number between 1 and 100.</p>
+        <label>Your Guess: </label>
+        <input type="number" ng-model="guess"/>
+        <button ng-click="verifyGuess()">Verify</button>	
+        <button ng-click="initializeGame()">Restart</button>	
+        <p ng-show="deviation < 0">Your guess is higher.</p>
+        <p ng-show="deviation > 0">Your guess is lower.</p>
+        <p ng-show="deviation === 0">Yes! That"s it.</p>
+        <p>No of guesses : {{noOfTries}}<p>
+    </body> 
+</html>

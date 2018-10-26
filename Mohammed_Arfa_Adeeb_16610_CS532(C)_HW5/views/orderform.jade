@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  form(action="/order",method="post")
+    Item Name:
+    input(type="text",name="itemName")
+    br
+    Item Quantity:
+    input(type="text",name="itemQty")
+    br
+    input(type="submit",value="Submit")
+    br

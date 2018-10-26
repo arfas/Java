@@ -1,0 +1,32 @@
+extends layout
+
+
+block content
+    h1=title
+    p Welcome to #{title}
+    form(action="/cart",method="post")
+    table
+        thead
+            tr
+                th ItemName
+                th Quantity
+                th Update
+                th Delete
+        tbody
+            each item in cart
+             
+                    tr 
+                     
+                        td=item.itemName
+                        td
+                         form(action="/cart",method="post")
+                            input(type="text",value=item.itemQty name="itemQty")
+                            input(type="text",value=item.itemName name="itemName" style="display:none;")
+                            input(type="submit", name="submit", value="Update" )
+                        td
+                         
+                        td
+                          form(action="/cart",method="post")
+                            input(type="text",value=item.itemName name="itemName" style="display:none;")
+                            input(type="submit",name="submit",value="Delete" )
+    p #{msg}                       

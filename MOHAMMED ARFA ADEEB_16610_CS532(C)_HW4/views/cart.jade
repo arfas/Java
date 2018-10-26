@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  h1 Your Cart
+ 
+  hr
+  table(border='1')
+      tr
+        th Item Name
+        |     
+        th Quantity
+        
+        th Update
+        
+        th Delete
+      |   
+      tr
+        td book
+        |     
+        td 9        
+         td
+          button update
+         td       
+          button delete
+
+      |   
+      tr
+        td computer
+        |     
+        td 6
+        td
+          button update
+         td       
+          button delete        
+      |  
+      tr
+        td pen
+        |     
+        td 80
+         td
+          button update
+         td       
+          button delete
+hr
+        p computer has been updated
+ script(src='/routes/cart.js')

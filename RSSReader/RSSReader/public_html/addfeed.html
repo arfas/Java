@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Add Feed Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div data-role="page" id="addfeedpage" data-add-back-btn="true">
+            <div data-role="header">
+                <h1>Add Feed</h1>
+            </div>
+            <div data-role="content">
+                <form id="addFeedForm">
+                    <div data-role="fieldcontain">        
+                        <label for="feedname">Feed Name:</label>        
+                        <input type="text" id="feedname" value=""  />        
+                    </div>	
+                    <div data-role="fieldcontain">        
+                        <label for="feedurl">Feed URL:</label>        
+                        <input type="url" id="feedurl" value=""  />        
+                    </div>	
+                    <input type="submit" value="Add Feed" data-theme="b">
+                </form>
+            </div>
+            <div data-role="footer">
+                <h4>NPU</h4>
+            </div>
+        </div>
+    </body>
+</html>

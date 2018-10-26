@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery load method</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="slide_show1.css">
+        <script src="jquery-1.11.2.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#news1").click(function () {
+                   $("article#info").load("news.html #news1"); 
+                });
+                $("#news2").click(function () {
+                   $("article#info").load("news.html #news2"); 
+                });
+                $("#news3").click(function () {
+                   $("article#info").load("news.html #news3"); 
+                });
+                $("#news4").click(function () {
+                   $("article#info").load("news.html #news4"); 
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <section>
+            <header>
+                <h1>The following content is loaded by using load() methid</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li><a id="news1" href="#">Vibrating bicycle senses traffic</a></li>
+                    <li><a id="news2" href="#">Weird and wonderful world of tech</a></li>
+                    <li><a id="news3" href="#">Samsung Galaxy S6 leak hints at a slim, glass-backed body</a></li>
+                    <li><a id="news4" href="#">Google Officially Unveils Travel Sites-Killer</a></li>
+                </ul>
+            </nav>
+            <article id="info">
+                
+            </article>
+        </section>
+        <button id="load">Load</button>
+    </body>
+</html>

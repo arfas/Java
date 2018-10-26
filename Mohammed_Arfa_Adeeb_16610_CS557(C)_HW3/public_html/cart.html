@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Your Cart</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    </head>
+    <body>
+        <script>
+            document.writeln("<style>");
+          document.writeln (" body ");
+          document.writeln("{");
+   document.writeln ("background-color: silver;");
+document.writeln("}");
+document.writeln("</style>");
+       
+         document.writeln("<h3>Cart Details</h3>");
+document.writeln("</form>");
+  document.writeln("<style>");
+            document.writeln("table {");
+    document.writeln("font-family: arial, sans-serif;");
+    document.writeln("border-collapse: collapse;");
+    document.writeln("width: 100%;");
+document.writeln("}");
+
+document.writeln("td, th {");
+   document.writeln(" border: 5px solid #dddddd;");
+    document.writeln("text-align: left;");
+    document.writeln("padding: 8px;");
+document.writeln("}");
+
+document.writeln("</style>");
+
+           document.writeln("<table style = width:100% >");
+          
+
+          document.writeln("<tr>");
+           document.writeln("<th><b>Item</b></th>");
+           document.writeln("<th>Quanlity of Images</th>");
+           document.writeln("<th>Glossy Finish</th>");
+           document.writeln("<th>Quantity</th>");
+           document.writeln("<th>Cost of the item</th>");
+           
+           document.writeln("</tr>");
+           document.writeln("<tr>");
+           
+           document.writeln("<td>"+orderpage.hardcopy+"</td>");
+           document.writeln("<td>"+orderpage.poster+"</td>");
+           document.writeln("<td>"+orderpage.email+"</td>");
+           document.writeln("<td>"+orderpage.password+"</td>");
+           document.writeln("<td>"+orderpage.address+"</td>");
+           
+           document.writeln("</tr>");
+           
+           document.writeln("</table>");
+         
+    
+
+                        
+		</script>
+               <input type="button" onclick="location.href='http://localhost:8383/Mohammed_Arfa_Adeeb_16610_CS557(C)_HW3/orderpage.html';" value="Go to Order" />
+                <input type="button" onclick="location.href='http://localhost:8383/Mohammed_Arfa_Adeeb_16610_CS557(C)_HW3/checkout.html';" value="Check Out" />
+    </body>
+</html>

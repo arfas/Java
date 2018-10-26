@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Pizza Order Form Page</title>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            legend {float: left; color: #ff1828;
+                font-style: italic;
+                font-size: small}
+        </style>
+    </head>
+    <body>
+        <form method="post" action="mailto:admissions@npu.edu">
+             <p>Once you have selected the items that you want to order and the payment type, click the Submit button to process the order.
+             </p>
+             <fieldset><legend>Customer Information</legend>
+             <p>Last Name: <input name="lastname" type="text" size="25" />
+                First Name: <input name="firstname" type="text" size="25" /><br />
+                Street Address: <input name="address" type="text" size="25" /><br>
+                City: <input name="city" type="text" size="25" /> 
+                State: <input name="state" type="text" size="25" /> 
+                ZIP: <input name="zip" type="text" size="10" />
+                E-mail Address: <input name="email" type="text" size="25" />
+             </p>
+             </fieldset>
+             <fieldset><legend>Your Order</legend>
+             <p>Add the following:
+                <input name="additional" type="checkbox" value="mushrooms" />Mushrooms
+                <input name="additional" type="checkbox" value="olives" />Olives
+                <input name="additional" type="checkbox" value="pepperoni" >Pepperoni
+             </p> 
+             </fieldset>
+             <fieldset><legend>Payment Method</legend>
+             <p>Credit card type:
+                <select name="payment">
+                    <option>American Express</option>
+                    <option>Visa</option>
+                    <option>MasterCard</option>
+                </select>
+                Credit card number:
+                    <input name="cardnum" type="text" size="20" maxlength="20" />
+                Expiration date:
+                    <input name="cardexp" type="text" size="4" maxlength="4" />
+             </p>
+             </fieldset>
+             <br />What other items would you like to see on our menu?
+             <br /><textarea name="other" rows="3" cols="100"></textarea>
+             <p><input type="submit" value="Submit" />
+             <input type="reset" value="Reset" />to create the Reset
+        </form>
+    </body>
+</html>

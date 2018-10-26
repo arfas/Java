@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Displaying random Images with Object property </title>
+        <script>
+            var myImages = [
+                "coco.jpg",
+                "bobo.jpg",
+                "dodo.jpg",
+                "haha.jpg"
+            ];
+            function changeImg(e) {
+                var e1 = e.target;
+                var newImgNumber = Math.round(Math.random() * 3);
+                while (e1.src.indexOf(myImages[newImgNumber]) != -1) {
+                    newImgNumber = Math.round(Math.random() * 3);
+                }
+                e1.src = "img/" + myImages[newImgNumber];
+            }
+
+            window.onload = function() {
+                document.getElementById("img1").onclick = changeImg;
+                document.getElementById("img2").onclick = changeImg;
+            };
+        </script>  
+    </head>
+    <body>
+        <img src="img/coco.jpg" id="img1" />    
+        <img src="img/bobo.jpg" id="img2" />
+    </body>
+</html>

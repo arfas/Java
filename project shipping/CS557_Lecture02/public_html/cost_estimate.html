@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Cost Estimate</title>
+        <script type="text/javascript">
+            var guestsCost = 0;
+            var limousinesCost = 0;
+            var liveMusicCost = 0;
+            var flowersCost = 0;
+            var totalEstimate = 0;
+            var liveMusic = false;
+            var flowers = false;
+
+            function calcGuests() {
+                totalEstimate -= guestsCost;
+                guestsCost = document.details.numGuests.value * 65;
+                totalEstimate += guestsCost;
+                document.estimate.cost.value = "$" + totalEstimate;
+            }
+
+            function calcLimousines() {
+                totalEstimate -= limousinesCost;
+                limousinesCost =
+                        document.details.numLimousines.value * 65;
+                totalEstimate += limousinesCost;
+                document.estimate.cost.value = "$" + totalEstimate;
+            }
+
+            function addMusic() {
+                (liveMusic == false) ? liveMusicCost = 500 : liveMusicCost = 0;
+                totalEstimate += liveMusicCost;
+                liveMusic = true;
+                document.estimate.cost.value = "$" + totalEstimate;
+            }
+
+            function removeMusic() {
+                (liveMusic == true) ? liveMusicCost = -500 : liveMusicCost = 0;
+                totalEstimate += liveMusicCost;
+                liveMusic = false;
+                document.estimate.cost.value = "$" + totalEstimate;
+            }
+
+            function addFlowers() {
+                (flowers == false) ? flowersCost = 400 : flowersCost = 0;
+                totalEstimate += flowersCost;
+                flowers = true;
+                document.estimate.cost.value = "$" + totalEstimate;
+            }
+
+            function removeFlowers() {
+                (flowers == true) ? flowersCost = -400 : flowersCost = 0;
+                totalEstimate += flowersCost;
+                flowers = false;
+                document.estimate.cost.value = "$" + totalEstimate;
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Cost Estimate</h1>
+        <form method="post" action="" name="details">
+            <table>
+                <tr>
+                    <td>Guests<br />($65 each)</td>
+                    <td><input type="text" name="numGuests" size="3" onchange="calcGuests()" /></td>
+                </tr>
+                <tr>
+                    <td>Limousines<br />($125 each)</td>
+                    <td><input type="text" name="numLimousines" size="3" onchange="calcLimousines()" /></td>
+                </tr>
+                <tr>
+                    <td>Live music<br />($500)</td>
+                    <td>
+                        <input type="radio" name="music" onchange="addMusic()" />Yes
+                        <input type="radio" name="music" checked="checked" onclick="removeMusic()" />No
+                    </td> 
+                </tr> 
+                <tr>
+                    <td>Flowers<br />($400)</td>
+                    <td>
+                        <input type="radio" name="flowers" onchange="addFlowers()" />Yes
+                        <input type="radio" name="flowers" checked="checked" onchange="removeFlowers()"/>No 
+                    </td> 
+                </tr>
+            </table>
+        </form>
+        <hr />
+        <form method="post" action="" name="estimate">
+            <p>
+                Estimated total cost:
+                <input type="text" name="cost" size="5" value="0" />
+            </p>          
+        </form>
+    </body>
+</html>

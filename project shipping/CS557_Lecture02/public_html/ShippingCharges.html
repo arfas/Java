@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Shipping Charges</title>
+        <script type="text/javascript">
+            var productPrice = 99.00;
+            function applyShipping() {
+                shippingCharge = 9.95;
+                var totalPrice = productPrice + shippingCharge;
+                document.write("<p>The product price is $" + productPrice + "<br />");
+                document.write("The shipping charge is $" + shippingCharge + "<br />");
+                document.write("The product price plus shipping is $" + totalPrice + "</p>");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Shipping Charge</h1>
+        <script type="text/javascript">
+            applyShipping();
+            document.write("<p>The product price is $" + productPrice + "<br />");
+            document.write("The shipping charge is $" + shippingCharge + "<br />");
+            document.write("The product price plus shipping is $" + totalPrice + "</p>");
+        </script>
+    </body>
+</html>

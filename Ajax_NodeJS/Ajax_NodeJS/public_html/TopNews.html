@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Top News</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Top News</h1> 
+        <form method="get" action="http://localhost:8080">
+            <table border="1" width="100%"> 
+                <tr>
+                    <td valign="top"> 
+                        <input type="radio" name="agency" value="http://my.abcnews.go.com/rsspublic/fp_rss20.xml" checked="checked" /> 
+                        ABC News<br /> 
+                        <input type="radio" name="agency" value="http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/front_page/rss.xml" /> 
+                        BBC<br /> 
+                        <input type="radio" name="agency" value="http://www.cbsnews.com/feeds/rss/main.rss" /> 
+                        CBS News<br /> 
+                        <input type="radio" name="agency" value="http://rss.cnn.com/rss/cnn_topstories.rss" /> 
+                        CNN<br /> 
+                        <input type="radio" name="agency" value="http://rss.msnbc.msn.com/id/3032091/device/rss/rss.xml" /> 
+                        MSNBC<br /> 
+                        <input type="radio" name="agency" value="http://rss.news.yahoo.com/rss/topstories" /> 
+                        Yahoo! News </td>
+                    <td id="newsCell" width='30%' align="top">
+                    </td> 
+                </tr> 
+            </table>
+            <p><input type="submit" value="Get Headlines" /></p> 
+        </form> 
+    </body>
+</html>

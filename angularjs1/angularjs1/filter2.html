@@ -1,0 +1,17 @@
+<!DOCTYPE html > 
+<html >  
+    <head>   
+        <script src="js/angular.min.js"></script>   
+        <script src="js/myAppModule.js"></script>
+    </head> 
+    <body ng-app="myAppModule" ng-controller='myCtrl'>  
+        <p>    <!-- Filtered data -->    
+            <strong>First Name</strong>: {{data.firstname| lowercase}}<br/>    
+            <strong>Last Name</strong> {{data.lastname| lowercase }} <br/>
+            <strong>GPA</strong> {{data.gpa| number:2 }} <br/>
+            <strong>Date Joined:</strong> {{data.dateJoined | date:fullDate}} <br/>     
+            <strong>Phone:</strong> {{data.phone | removeDashes}}
+            
+        </p>
+    </body> 
+</html>

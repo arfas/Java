@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="angular.min.js"></script> 
+        <script>
+            function MyController($scope, $http) {
+                $scope.books = [];
+                $scope.getBookList = function () {
+                    $http({method: 'GET', url: 'http://localhost:3000/api/get'})
+                            .success(function (books) {
+                                $scope.books = books;
+                            })
+                            .error(function (data, status, headers, config) {
+                                console.error("Error requesting '" + url + "'.");
+                            });
+                };
+                $scope.updateQuantity = function (id) {
+                    var price = document.getElementById(id).value;
+                    var i;
+                    for(i = 0; $scope.books.length; i++) {
+                        if ($scope.books[i].id == id) {
+                            $scope.books[i].price = price;
+                            break;
+                        }
+                    }
+                    
+                    $http({method: 'POST', url: 'http://localhost:3000/api/edit/', data: $scope.books[i]})
+                            .success(function () {
+                                alert("Updated");
+                            })
+                            .error(function (data, status, headers, config) {
+                                console.error("Error requesting '" + url + "'.");
+                            });
+                };
+            }
+        </script>
+    </head>
+    <body ng-controller="MyController">
+        <header>    
+            <a href="#" ng-click="getBookList()">Get Book List</a> 
+        </header>
+        <section>
+            <article ng-repeat="book in books">
+                <hr />
+                <strong>{{book.title}}</strong><br />
+                <input type="text" id="{{book.id}}" value="{{book.price}}">
+                <button ng-click="updateQuantity(book.id)">Update</button>
+                <br />
+            </article>
+        </section>
+    </body>
+</html>

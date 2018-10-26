@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Guess a Word</title>
+		<style>
+			.letter {
+				background-color: yellow;
+				border: darkblue 1px solid; 
+				padding: 5px;
+				margin: 5px;
+				display: inline;
+				width: 10em;	
+			}
+			#answer {
+				border: black 1px dashed; 
+				padding: 10px;
+				width: 95%;
+				margin: 0 auto;
+			}
+		</style>
+		<script>
+			//Create an array of words
+			var words = [
+				"smartphone",
+				"apple",
+				"weather",
+				"lecture",
+				"transportation"
+			];
+			// Pick up a random word
+			var word = words[Math.floor(Math.random() * words.length)];
+			// Set up the answer array
+			var answer = word.split('');
+			var answer = answer.map(function(e) {
+				return '_';
+			});
+			console.log(word);
+			var remainingLetters = word.length;
+			
+			function updateAnswerArray() {
+				var answerBox = document.getElementById('answer');
+				while (answerBox.firstChild) {
+					answerBox.removeChild(answerBox.firstChild);
+				}
+				
+				answer.forEach(function (element) {
+					var letter = document.createElement("h3");
+					letter.className = 'letter';
+					letter.innerText = element;
+					answerBox.appendChild(letter);
+				});
+				
+				//var ele = document.getElementById("guess");
+				//ele.focus();
+			}
+			
+			function checkAnswer() {
+				var ele = document.getElementById("guess");
+				var guess = ele.value.toLowerCase();
+				ele.value = "";
+				console.log(guess);
+				answer.forEach(function(element, i, array) {
+					if (word[i] == guess && element == "_") {
+						array[i] = guess;
+						remainingLetters--;
+					} 
+				});
+				
+				updateAnswerArray();
+				
+				if (remainingLetters == 0) {
+					ele = document.getElementById("result");
+					ele.innerHTML = "Good job! The word was " + word;
+				}
+			}
+			
+		</script>
+		
+	</head>
+	<body onload="updateAnswerArray();">
+		<h1>Guess a Word</h1>
+		<div id="answer"></div>
+		<br />
+		Guess a letter:
+		<input type="text" id="guess" autofocus size="3" value="" /><br />
+		<input type="button"  onclick="checkAnswer();" value="Guess"/>
+		<input type="button"  onclick="location.reload();" value="Restart"/>
+		<hr>
+		<h2 id="result"></h2>
+	</body>
+</html>

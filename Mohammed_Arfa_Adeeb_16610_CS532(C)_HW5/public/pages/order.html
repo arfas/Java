@@ -1,0 +1,205 @@
+<div>
+    <h1>Order Page</h1>
+    <p>{{ message }}</p>
+    <h3 style="color:red">Order Form</h3>
+        <form>
+            <ol>
+                <li ><h4>Prints</h4>
+                    <input id="1" type="radio" name="hardcopy" value="A4" checked> A4
+                    <form id="purchase">
+		 <br> Item Price: $8.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract' onclick='Total("qty",-1,"total",8.99);' value='-'/>
+		 <input type='button' name='add' onclick='Total("qty",1,"total",8.99);' value='+'/>
+                 
+                 </form>
+                 
+  <input id="2"  type="radio" name="hardcopy" value="A3"> A3
+   <form id="purchase">
+		 <br> Item Price: $9.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract' onclick='Total("qty",-1,"total",9.99);' value='-'/>
+		 <input type='button' name='add' onclick='Total("qty",1,"total",9.99);' value='+'/>
+                 
+                 </form>
+               
+  <input id="3" type="radio" name="hardcopy" value="A2"> A2
+   <form id="purchase">
+		 
+		<br>Item Price: $10.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract' onclick='Total("qty",-1,"total",10.99);' value='-'/>
+		 <input type='button' name='add' onclick='Total("qty",1,"total",10.99);' value='+'/>
+                 
+                 </form>
+                
+
+        
+  
+      
+   <form id="purchase">
+		
+		Total Quantity: <input type='text' name='qty' id='qty'  value="0"/>
+		Total Price:<input type='text' name='total' id='total' value="0" />
+                 
+      </form>
+ 
+             <button ng-click="addToCart()">Add To Cart</button>
+              
+                </li>
+                
+                <li> <h4>Posters</h4>
+                  <input type="radio" name="poster" value="A4" checked> Large
+                   <form id="purchase1">
+		 <br> Item Price: $9.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract1' onclick='Total1("qty1",-1,"total1",9.99);' value='-'/>
+		 <input type='button' name='add1' onclick='Total1("qty1",1,"total1",9.99);' value='+'/>
+		 
+      </form>
+  <input type="radio" name="poster" value="A3"> Medium
+   <form id="purchase1">
+		 <br> Item Price: $10.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract1' onclick='Total1("qty1",-1,"total1",10.99);' value='-'/>
+		 <input type='button' name='add1' onclick='Total1("qty1",1,"total1",10.99);' value='+'/>
+		 
+      </form>
+  <input type="radio" name="poster" value="A2"> Small
+   <form id="purchase1">
+		 <br> Item Price: $11.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract1' onclick='Total1("qty1",-1,"total1",11.99);' value='-'/>
+		 <input type='button' name='add1' onclick='Total1("qty1",1,"total1",11.99);' value='+'/>
+		 
+      </form></br>
+ 
+  <form id="purchase1">
+		 Total Quantity:<input type='text' name='qty1' id='qty1'  value="0"/>
+		 Total Price:<input type='text' name='total1' id='total1' value="0" />
+      </form>
+              
+               <button ng-click="addToCart()">Add To Cart</button>
+                </li>
+                <li> <h4>Coffee Mugs</h4>
+                  <input type="radio" name="cmugs" value="A4" checked> 16oz
+                   <form id="purchase2">
+		 <br> Item Price: $10.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract2' onclick='Total2("qty2",-1,"total2",10.99);' value='-'/>
+		 <input type='button' name='add2' onclick='Total1("qty2",1,"total2",10.99);' value='+'/>
+		 
+      </form>
+  <input type="radio" name="cmugs" value="A3"> 12oz
+   <form id="purchase2">
+		 <br> Item Price: $11.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract2' onclick='Total2("qty2",-1,"total2",11.99);' value='-'/>
+		 <input type='button' name='add2' onclick='Total1("qty2",1,"total2",11.99);' value='+'/>
+		 
+      </form>
+  <input type="radio" name="cmugs" value="A2"> 8oz
+   <form id="purchase2">
+		 <br> Item Price: $12.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract2' onclick='Total2("qty2",-1,"total2",12.99);' value='-'/>
+		 <input type='button' name='add2' onclick='Total1("qty2",1,"total2",12.99);' value='+'/>
+		 
+      </form>
+  </br>
+ Color:
+  <select id="Color">
+<option value="blue">Blue</option>
+<option value="green">Green</option>
+<option value="Red">Red</option>
+<option value="black" selected>Black</option>
+</select>
+                 <form id="purchase2">
+		
+	Total Quantity:	  <input type='text' name='qty2' id='qty2'  value="0"/>
+Total Price:		 <input type='text' name='total2' id='total2' value="0" />
+      </form>
+                
+              <button ng-click="addToCart()">Add To Cart</button>
+                </li>
+                 <li> <h4>T-Shirts</h4>
+                  <input type="radio" name="ts" value="A4" checked> S
+                  <form id="purchase3">
+		 <br> Item Price: $11.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract3' onclick='Total3("qty3",-1,"total3",11.99);' value='-'/>
+		 <input type='button' name='add3' onclick='Total3("qty3",1,"total3",11.99);' value='+'/>
+		 
+      </form>
+  <input type="radio" name="ts" value="A3"> M
+  <form id="purchase3">
+		 <br> Item Price: $11.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract3' onclick='Total3("qty3",-1,"total3",11.99);' value='-'/>
+		 <input type='button' name='add3' onclick='Total3("qty3",1,"total3",11.99);' value='+'/>
+		
+      </form>
+  <input type="radio" name="ts" value="A2"> L
+  <form id="purchase3">
+		 <br> Item Price: $11.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract3' onclick='Total3("qty3",-1,"total3",11.99);' value='-'/>
+		 <input type='button' name='add3' onclick='Total3("qty3",1,"total3",11.99);' value='+'/>
+		
+      </form>
+  <input type="radio" name="ts" value="A2"> XL
+  <form id="purchase3">
+		 <br> Item Price: $12.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract3' onclick='Total3("qty3",-1,"total3",12.99);' value='-'/>
+		 <input type='button' name='add3' onclick='Total3("qty3",1,"total3",12.99);' value='+'/>
+		
+      </form>
+  <input type="radio" name="ts" value="A2"> XS
+  <form id="purchase3">
+		 <br> Item Price: $11.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract3' onclick='Total3("qty3",-1,"total3",11.99);' value='-'/>
+		 <input type='button' name='add3' onclick='Total3("qty3",1,"total3",11.99);' value='+'/>
+  </form>	 
+  <input type="radio" name="ts" value="A2"> XXS
+  <form id="purchase3">
+		 <br> Item Price: $11.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract3' onclick='Total3("qty3",-1,"total3",11.99);' value='-'/>
+		 <input type='button' name='add3' onclick='Total3("qty3",1,"total3",11.99);' value='+'/>
+		 
+      </form>
+  <input type="radio" name="ts" value="A2"> XXL
+  <form id="purchase3">
+		 <br> Item Price: $13.99
+		 <br> Please Select Quantity
+		 <input type='button' name='subtract3' onclick='Total3("qty3",-1,"total3",13.99);' value='-'/>
+		 <input type='button' name='add3' onclick='Total3("qty3",1,"total3",13.99);' value='+'/>
+		
+  </br>
+  
+  <select id="Color">
+<option value="blue">Blue</option>
+<option value="green">Green</option>
+<option value="Red">Red</option>
+<option value="black" selected>Black</option>
+</select>
+                 <form id="purchase3">
+		 
+		 
+		Total Quantity: <input type='text' name='qty3' id='qty3'  value="0"/>
+		Total Price: <input type='text' name='total3' id='total3' value="0" />
+      </form>
+               <button ng-click="addToCart()">Add To Cart</button>
+                </li>
+            </ol>
+
+ 
+</form>
+    Quantity:<input type="text" ng-model="item.itemQty"><br>
+    <button ng-click="addToCart()">Add To Cart</button>
+    <br>
+    <h3>{{result}}</h3>
+    
+</div>

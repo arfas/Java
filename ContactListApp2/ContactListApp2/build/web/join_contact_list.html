@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>NPU Student Club</title>
+    </head>
+    <body>
+        <h1>Join our contact list</h1>
+        <p>To join our contact list, enter your name and
+            email address below. <br>
+            Then, click on the Submit button.</p>
+        <form action="addToContactList2" method="post">
+            <table cellspacing="5" border="0">
+                <tr>
+                    <td align="right">First name:</td>
+                    <td><input type="text" name="firstName"></td>
+                </tr>
+                <tr>
+                    <td align="right">Last name:</td>
+                    <td><input type="text" name="lastName"></td>
+                </tr>
+                <tr>
+                    <td align="right">Email address:</td>
+                    <td><input type="text" name="emailAddress"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><br><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+            <hr>
+            <p><a href="addToContactList?firstName=Lily&&lastName=Li&&emailAddress=lily@yahoo.com">
+                    Display Contact Entry
+                </a>
+            </p>           
+        </form>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Customer's Requests</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function Customer(name, email, phone, requestedDate) {
+                this.name = name;
+                this.emailAddress = email;
+                this.phone = phone;
+                this.requestedDate = requestedDate;    
+            }
+            
+            
+            var newCustomer = new Customer("Peter Lee", 
+                "peter@yahoo.com", 
+                "408-222-7777", 
+                new Date(2014, 7, 4, 20));
+            
+            document.write("<h1>Customer's Request Order</h1>"); 
+            document.write("<p>Customer: " + newCustomer.name); 
+            document.write("<br />E-mail address: " + newCustomer.emailAddress); 
+            document.write("<br />Phone number: " + newCustomer.phone);
+            document.write("<br />Requested Date: " + newCustomer.requestedDate.toLocaleString() + "</p>");
+           
+           
+            var newCustomer2 = new Customer();
+            newCustomer2.name = "Tom Lee";
+            newCustomer2.emailAddress = "tom@yahoo.com";
+            newCustomer2.phone = "408-555-8888";
+            newCustomer2.requestedDate = new Date(2014, 9, 4, 20);
+            
+            document.write("<h1>Customer's Request Order</h1>"); 
+            document.write("<p>Customer: " + newCustomer2.name); 
+            document.write("<br />E-mail address: " + newCustomer2.emailAddress); 
+            document.write("<br />Phone number: " + newCustomer2.phone);
+            document.write("<br />Requested Date: " + newCustomer2.requestedDate.toLocaleString() + "</p>");
+        </script>
+    </body>
+</html>

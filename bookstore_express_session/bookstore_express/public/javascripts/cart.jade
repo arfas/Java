@@ -1,0 +1,14 @@
+extends layout
+block content
+    .container
+        header
+            h1 Cart
+            hr
+            a(href="/") Home
+            span  | 
+            a(href="#/") List
+            span  | 
+            a(href="#/add") Add
+            
+        section(ng-view)
+    script(src='/javascripts/cart.js')

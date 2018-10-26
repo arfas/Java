@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myRouteModule">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <script src="javascripts/angular.min.js"></script>
+        <script src="javascripts/angular-route.min.js"></script>
+        <script src="javascripts/myRouteModule.js"></script>
+    </head>
+    <body ng-controller="homeController">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#order">Order</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                      <li><a href="#checkout">Checkout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <article>
+            <!-- this is where content will be injected -->
+            <div ng-view></div>
+        </article>
+    </body>
+</html>

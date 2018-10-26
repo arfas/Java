@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Physics Quiz</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript">
+            var answers = new Array(5); 
+            var correctAnswers = new Array(5); 
+            correctAnswers[0] = "a"; 
+            correctAnswers[1] = "c"; 
+            correctAnswers[2] = "b"; 
+            correctAnswers[3] = "c"; 
+            correctAnswers[4] = "d";
+            
+            function recordAnswer(question, answer) {     
+                answers[question-1] = answer; 
+            } 
+            
+            function scoreQuiz() { 
+                var totalCorrect = 0;     
+                var count = 0;     
+                while (count < correctAnswers.length) {         
+                    if (answers[count] == correctAnswers[count])             
+                        ++totalCorrect;         
+                        ++count;     
+                    }     
+                    
+                    document.quiz.score.value = "You scored "         
+                            + totalCorrect          
+                            + " out of 5 answers correctly!"; 
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Physics Quiz</h1>
+        <form action="" name="quiz">
+            <p>
+                <strong>1. How many natural elements are
+                    there?</strong></p>
+            <p>
+                <input type="radio" name="question1" value="a"
+                       onclick="recordAnswer(1, 'a')" />92<br /> <!-- correct answer -->
+                <input type="radio" name="question1" value="b"
+                       onclick="recordAnswer(1, 'b')" />113<br />
+                <input type="radio" name="question1" value="c"
+                       onclick="recordAnswer(1, 'c')" />103<br />
+                <input type="radio" name="question1" value="d"
+                       onclick="recordAnswer(1, 'd')" />88</p>
+            <p>
+                <strong>2. If one kg of air is compressed from
+                    1 m3 to 0.5 m3, which of the following
+                    statements is true?</strong></p>
+            <p>
+                <input type="radio" name="question2" value="a"
+                       onclick="recordAnswer(2, 'a')" />
+                The density is halved.<br />
+                <input type="radio" name="question2" value="b"
+                       onclick="recordAnswer(2, 'b')" />
+                The mass is halved.<br />
+                <input type="radio" name="question2" value="c"
+                       onclick="recordAnswer(2, 'c')" />
+                The density is doubled.<br /><!-- correct answer -->
+                <input type="radio" name="question2" value="d"
+                       onclick="recordAnswer(2, 'd')" />
+                The mass is doubled.</p>
+            <p>
+                <strong>3. What is the acceleration due to
+                    gravity?</strong></p>
+            <p>
+                <input type="radio" name="question3" value="a"
+                       onclick="recordAnswer(3, 'a')" />
+                980 m/s2<br />
+                <input type="radio" name="question3" value="b"
+                       onclick="recordAnswer(3, 'b')" />
+                9.8 m/s2<br /><!-- correct answer -->
+                <input type="radio" name="question3" value="c"
+                       onclick="recordAnswer(3, 'c')" />
+                98 m/s2<br />
+                <input type="radio" name="question3" value="d"
+                       onclick="recordAnswer(3, 'd')" />
+                0.98 m/s2</p>
+            <p>
+                <strong>4. What is the SI unit of
+                    density?</strong></p>
+            <p>
+                <input type="radio" name="question4" value="a"
+                       onclick="recordAnswer(4, 'a')" />
+                cm3/g<br />
+                <input type="radio" name="question4" value="b"
+                       onclick="recordAnswer(4, 'b')" />
+                m3/kg<br />
+                <input type="radio" name="question4" value="c"
+                       onclick="recordAnswer(4, 'c')" />
+                kg/m3<br /><!-- correct answer -->
+                <input type="radio" name="question4" value="d"
+                       onclick="recordAnswer(4, 'd')" />
+                g/cm3</p>
+            <p>
+                <strong>5. Which of these has the highest
+                    density?</strong></p>
+            <p>
+                <input type="radio" name="question5" value="a"
+                       onclick="recordAnswer(5, 'a')" />
+                Lead<br />
+                <input type="radio" name="question5" value="b"
+                       onclick="recordAnswer(5, 'b')" />
+                Water<br />
+                <input type="radio" name="question5" value="c"
+                       onclick="recordAnswer(5, 'c')" />
+                Mercury<br />
+                <input type="radio" name="question5" value="d"
+                       onclick="recordAnswer(5, 'd')" />
+                Tungsten</p> <!-- correct answer -->
+            
+                <p>    
+                    <input type="button" value="Score" onclick="scoreQuiz();" />    
+                    <input type="text" name="score" size="40"        
+                           style="color: blue; border-style: none;         
+                           border-color: inherit; border-width: medium;         
+                           background-color: Transparent" value="0" /> 
+                </p> 
+        </form>
+    </body>
+</html>

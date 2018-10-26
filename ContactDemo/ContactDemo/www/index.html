@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Contact Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="js/libs/jquery-mobile/jquery.mobile.min.css" />
+        <script type="text/javascript" src="js/libs/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery-mobile/jquery.mobile.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+    <body onload="onBodyLoad()">
+        <section id="main" data-role="page" >
+            <header data-role="header">
+                <h1>Contacts Demo</h1>
+            </header>
+            <div data-role="content">
+                <h3>Select Contact to Add:</h3>
+                <div id="contacts">
+                    <ul data-role="listview">
+                        <li>
+                            <a onclick="getContact('carl');">Carl Buck</a>
+                        </li>
+                        <li>
+                            <a onclick="getContact('dave');">Dave Henderson</a>
+                        </li>
+                        <li>
+                            <a onclick="getContact('jim');">Jim Tomic</a>
+                        </li>
+                        <li>
+                            <a onclick="getContact('long');">Long Vu</a>
+                        </li>
+                        <li>
+                            <a onclick="getContact('nancy');">Nancy Leung</a>
+                        </li>
+                        <li>
+                            <a onclick="getContact('tom');">Tom Bong</a>
+                        </li>
+                    </ul>
+                </div>
+                <h1><img src="img/logo.png" alt="Smiley face" height="42" width="42"></h1>
+                <div id="findContact">
+                    <h3>Search Contact:</h3>
+                    <div data-role="fieldcontain">
+                        <label for="editSearch">Search Contacts:</label>
+                        <input type="search" id="editSearch" />
+                        <label for="searchScope">Search Scope:</label>
+                        <select id="searchScope" name="searchScope">
+                            <option>All</option>
+                            <option>Name</option>
+                            <option>Address</option>
+                            <option>Notes</option>
+                        </select>
+                    </div>
+                    <input type="button" onclick="searchContacts();" id="btnSearch" value="Search Contacts" />
+                </div>
+            </div>
+            <footer data-role="footer" data-position="fixed">
+                <a href="http://docs.phonegap.com" target="_blank">PhoneGap API</a>
+            </footer>
+        </section>
+        <section id="contactDetail" data-role="page">
+            <header id="detailHeader" data-role="header"  data-add-back-btn="true" >
+                <h1 id="contactName"></h1>
+            </header>
+            <div data-role="content">
+                <div id="detailContent"></div>
+                <input type="button" id="btnAdd" value="Add Contact" onclick="addContact();" />
+            </div>
+        </section>
+        <section id="contactList" data-role="page" >
+            <header data-role="header" data-add-back-btn="true">
+                <h1>Search Results</h1>
+            </header>
+            <div data-role="content">
+                <h3>Select Contact:</h3>
+                <p id="searchContacts">contact list goes here.</p>
+            </div>
+        </section>
+    </body>
+</html>

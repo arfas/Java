@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adding and Removing Multiple Event Listeners </title>
+        <script>
+            var myImages = ["coco.jpg", "bobo.jpg", "dodo.jpg", "haha.jpg"];
+            function changeImg(e) {
+                var e1 = e.target;
+                var newImgNumber = Math.round(Math.random() * 3);
+                while (e1.src.indexOf(myImages[newImgNumber]) != -1) {
+                    newImgNumber = Math.round(Math.random() * 3);
+                }
+                e1.src = "img/" + myImages[newImgNumber];
+            }
+            function updateStatus(e) {
+                var el = e.target;
+                var status = document.getElementById("status");
+                status.innerHTML = "The image changed to " + el.src;
+                if (el.src.indexOf("haha") != -1) {
+                    el.removeEventListener("click", changeImg);
+                    el.removeEventListener("click", updateStatus);
+                }
+            }
+            window.onload = function () {
+                var img = document.getElementById("img1");
+                img.addEventListener("click", changeImg);
+                img.addEventListener("click", updateStatus);
+            };
+        </script>  
+    </head>
+    <body>
+        <img src="img/coco.jpg" id="img1" />    
+        <div id="status"></div>
+    </body>
+</html>

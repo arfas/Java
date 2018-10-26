@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>NPU Mobile</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+        <link rel="stylesheet" href="themes/my-custom-theme.css.min.css" />
+        <link href="styles.css" rel="stylesheet" type="text/css">
+        <!-- JavaScript HTML requirements -->
+        <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+    </head>
+
+    <body>
+
+        <!-- HOME -->
+        <div data-role="page" id="home">
+            <header data-role="header">
+                <h1>NPU</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="home" class="ui-btn-active" data-theme="b">Home</a></li>
+                        <li><a href="#academics" data-icon="star" data-theme="b">Academics</a></li>
+                        <li><a href="#contactus" data-icon="grid" data-theme="b">Contact Us</a></li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <h2>Why people choose NPU</h2>
+                <p>NPU provides courses and trainings that help students in three schools:</p>
+                <ul>
+                    <li>School of Engineering</li>
+                    <li>School of Business and Information Technology</li>
+                    <li>General Education</li>
+                </ul>
+                <p>To find out more, go to <a href="#academics">Academics</a>.</p>
+            </section>
+
+            <footer data-role="footer">
+                <h4>&copy; 2013-2014</h4>
+            </footer>
+        </div>
+
+        <!-- ACADEMICS -->
+        <div data-role="page" id="academics">
+            <header data-role="header">
+                <h1>NPU</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="home" data-theme="b">Home</a></li>
+                        <li><a href="#academics" data-icon="star" class="ui-btn-active" data-theme="b">Academics</a></li>
+                        <li><a href="#contactus" data-icon="grid" data-theme="b">Contact Us</a></li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <p>NPU's bachelor's, master's and doctoral degree programs are designed to prepare students for the practice of engineering, computer science, and business administration at a professional level. In addition to courses teaching the fundamentals, each degree curriculum is designed to be connected to Silicon Valley's major industries in electronics, computer engineering, information technology, enterprise management, and global business development.</p>
+
+                <h3>School of Engineering</h3>
+                <img src="images/logo_engineering.gif" width="84" height="48">
+                <p>The School of Engineering offers degree programs at bachelor's, master's, and doctoral levels. The following are program descriptions for the bachelor's and master's degrees. The dean, program chairs, as well as the faculty members of the School of Engineering are responsible for the School's academic affairs. Three degree programs are offered at the bachelor's and master's degree levels: electrical engineering, computer systems engineering, and computer science. Each discipline is headed by a program chair. Practical applications are emphasized throughout the students' learning process although theoretical background is taught in each course subject as fundamental.
+                    <a href="#engineering" data-rel="dialog" data-transition="slideup">Read more...</a></p>
+
+                <h3>School of Business and Information Technology</h3>
+                <img src="images/logo_business.gif" width="84" height="48">
+                <p>The School of Business and Information Technology offers both undergraduate and graduate degree programs. These are educational programs in the business and organizational disciplines intended to prepare individuals to make sustained contributions to organizations and society in a global, diverse, and dynamic environment, focusing on developing an individual's interdisciplinary problem-solving skills, interpersonal and communication skills, ability to adapt to changing information technology and business environments, entrepreneurial innovations, and ethical and professional values.
+                    <a href="#business" data-rel="dialog" data-transition="slidedown">Read more...</a></p>
+
+                <h3>General Education</h3>
+                <img src="images/logo_general.gif" width="84" height="48">
+                <p>The purpose of general education is to give breadth to a student's education. With a general background in English and communications, humanities, mathematics, natural sciences, and the social sciences, the student will be prepared for his or her role both in society and at work.
+                    <a href="#general" data-rel="dialog" data-transition="flip">Read more...</a></p>
+            </section>
+
+            <footer data-role="footer">
+                <h4>&copy; 2013-2014</h4>
+            </footer>
+        </div>
+
+        <!-- SOLUTIONS : ENGINEERING -->
+        <div data-role="page" id="engineering">
+            <header data-role="header">
+                <h1>NPU</h1>
+            </header>
+
+            <section data-role="content">
+                <img src="images/logo_engineering.gif" width="84" height="48">
+                <h2>School of Engineering</h2>
+                <h3>What degree programs do we offer</h3>
+                <ul>
+                    <li>BSCS</li>
+                    <li>BSCSE</li>
+                    <li>BSEE</li>
+                    <li>MSCS</li>
+                    <li>MSCSE</li>
+                    <li>MSEE</li>
+                    <li>DCE</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- SOLUTIONS : BUSINESS -->
+        <div data-role="page" id="business">
+            <header data-role="header">
+                <h1>NPU</h1>
+            </header>
+
+            <section data-role="content">
+                <img src="images/logo_general.gif" width="84" height="48">
+                <h2>School of Business</h2>
+                <h3>What degree programs do we offer</h3>
+                <ul>
+                    <li>BA</li>
+                    <li>MBA</li>
+                    <li>DBA</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- SOLUTIONS : GENERAL -->
+        <div data-role="page" id="general">
+            <header data-role="header">
+                <h1>NPU</h1>
+            </header>
+
+            <section data-role="content">
+                <img src="images/logo_general.gif" width="84" height="48">
+                <h2>General Education</h2>
+                <h3>What courses do we offer</h3>
+                <ul>
+                    <li>English Literature</li>
+                    <li>American History</li>
+                    <li>Paintings</li>
+                    <li>Music</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- CONTACT US -->
+        <div data-role="page" id="contactus">
+            <header data-role="header">
+                <h1>NPU</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="home" data-theme="b">Home</a></li>
+                        <li><a href="#academics" data-icon="star" data-theme="b">Academics</a></li>
+                        <li><a href="#contactus" data-icon="grid" class="ui-btn-active" data-theme="b">Contact Us</a></li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <h4>Please contact us by phone, mail, or email...whatever works best for you</h4>
+                <h4>Phone</h4><p><a href="tel:510-555-5555">510-555-7777</a></p>
+                <h4>Mail</h4><p>Northwestern Polytechnic University<br>777 Never found Dr.<br>Fremont, CA 98765</p>
+                <h4>Email</h4><p><a href="mailto:admin@npu.edu">admin@npu.edu</a></p><br>
+                <a href="#home" data-role="button" data-icon="back" data-theme="b">Back to previous page</a>
+            </section>
+
+            <footer data-role="footer">
+                <h4>&copy; 2013-2014</h4>
+            </footer>
+        </div>
+    </body>
+</html>

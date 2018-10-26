@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Top News</title>
+        <meta charset="UTF-8">
+        <script type="text/javascript">
+            var newsRequest = false;
+            function getRequestObject() {
+                try {
+                    httpRequest = new XMLHttpRequest();
+                }
+                catch (requestError) {
+                    window.alert("Your browser does not support AJAX!");
+                    return false;
+                }
+                return httpRequest;
+            }
+            function newsUpdate() {
+                if (!newsRequest)
+                    newsRequest = getRequestObject();
+                for (var i = 0; i < 6; ++i) {
+                    if (document.forms[0].agency[i].checked == true) {
+                        var agency = document.forms[0].agency[i].value;
+                        break;
+                    }
+                }
+                
+                newsRequest.abort();
+                newsRequest.open("get", "http://localhost:8080?" + "agency=" + agency, true);
+                newsRequest.send(null);
+                newsRequest.onreadystatechange=fillNewsInfo;     
+                
+                clearTimeout(recentNews); 
+                var recentNews = setTimeout('newsUpdate()', 3000); 
+            }
+            function fillNewsInfo() {    
+                if (newsRequest.readyState==4 && newsRequest.status == 200) 
+                {    
+                    var news = newsRequest.responseXML;                
+                document.getElementById("newsCell").innerHTML = "";
+                var newsItems = news.getElementsByTagName("item");
+                if (newsItems.length > 0) {
+                    for (var i = 0; i < newsItems.length; ++i)
+                    {
+                        var curHeadline = newsItems[i].getElementsByTagName("title")[0].firstChild.nodeValue; 
+                        var curLink = newsItems[i].getElementsByTagName("link")[0].firstChild.nodeValue; 
+                        var curPubDate = newsItems[i].getElementsByTagName("pubDate")[0].firstChild.nodeValue; 
+                        var curDesc = newsItems[i].getElementsByTagName("description")[0].firstChild.nodeValue; 
+                        
+                        var curStory = "<a href='" + curLink + "'>" + curHeadline + "</a><br />"; 
+                        curStory += "<span style='color: gray'>" + curPubDate + "</span><br />"; 
+                        curStory += curDesc + "<br />"; 
+                        document.getElementById("newsCell").innerHTML += curStory; 
+                    }
+                }
+                else
+                    document.getElementById("newsCell").innerHTML = "RSS feed does not contain any items."; 
+                } 
+            } 
+        </script>
+    </head>
+    <body onload="newsUpdate()" >
+        <h1>Top News</h1> 
+        <form method="post" action="TopNews.php"> 
+            <table border="1" width="100%"> 
+                <colgroup span="1" width="20%" /> 
+                <colgroup span="1" width="80%" /> 
+                <tr>
+                    <td valign="top"> 
+                        <input type="radio" name="agency" value="http://my.abcnews.go.com/rsspublic/fp_rss20.xml" 
+                               checked="checked" onclick="newsUpdate()" /> 
+                        ABC News<br /> 
+                        <input type="radio" name="agency" value="http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/front_page/rss.xml" 
+                               onclick="newsUpdate()" /> 
+                        BBC<br /> 
+                        <input type="radio" name="agency" value="http://www.cbsnews.com/feeds/rss/main.rss" 
+                               onclick="newsUpdate()" /> 
+                        CBS News<br /> 
+                        <input type="radio" name="agency" value="http://rss.cnn.com/rss/cnn_topstories.rss" 
+                               onclick="newsUpdate()" /> 
+                        CNN<br /> 
+                        <input type="radio" name="agency" value="http://rss.msnbc.msn.com/id/3032091/device/rss/rss.xml" 
+                               onclick="newsUpdate()" /> 
+                        MSNBC<br /> 
+                        <input type="radio" name="agency" value="http://rss.news.yahoo.com/rss/topstories" 
+                               onclick="newsUpdate()" /> 
+                        Yahoo! News </td>
+                    <td id="newsCell" width='30%' align="top">
+                    </td> 
+                </tr> 
+            </table>
+            <p><input type="submit" value="Get Headlines" /></p> 
+        </form> 
+    </body>
+</html>
